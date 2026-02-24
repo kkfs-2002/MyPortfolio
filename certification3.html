@@ -153,7 +153,7 @@
         .page-header {
             width: 100%;
             min-height: 200px;
-            background: linear-gradient(135deg, rgba(48, 42, 111, 0.9), rgba(48, 42, 111, 0.9)), url('images/cet1.jpg') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(48, 42, 111, 0.9), rgba(48, 42, 111, 0.9)), url('/images/cet1.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -980,7 +980,7 @@
                 <!-- Certificate Image Section -->
                 <div class="certificate-image-section">
                     <div class="certificate-preview">
-                        <img src="images/mo3.png" alt="WordPress Development Certificate">
+                        <img src="/images/mo3.png" alt="WordPress Development Certificate">
                     </div>
                     <button class="download-btn" onclick="downloadCertificate()">
                         <i class="fas fa-download"></i> Download Certificate
@@ -1190,7 +1190,7 @@
         // Download certificate function
         function downloadCertificate() {
             const link = document.createElement('a');
-            link.href = 'images/mo3.png';
+            link.href = '/images/mo3.png';
             link.download = 'WordPress_Development_Certificate.jpg';
             document.body.appendChild(link);
             link.click();

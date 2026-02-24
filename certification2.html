@@ -155,7 +155,7 @@
             width: 100%;
             height: 300px;
             background: linear-gradient(135deg, rgba(48, 42, 111, 0.9), rgba(48, 42, 111, 0.9)), 
-                        url("images/cet2.jpg");
+                        url("/images/cet2.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1149,7 +1149,7 @@
                 <!-- Certificate Image Section -->
                 <div class="certificate-image-section">
                     <div class="certificate-preview">
-                        <img src="images/mo2.png" alt="Front-End Web Development Certificate">
+                        <img src="/images/mo2.png" alt="Front-End Web Development Certificate">
                     </div>
                     <button class="download-btn" onclick="downloadCertificate()">
                         <i class="fas fa-download"></i> Download Certificate
@@ -1343,7 +1343,7 @@
         // Download certificate function
         function downloadCertificate() {
             const link = document.createElement('a');
-            link.href = 'images/mo2.png';
+            link.href = '/images/mo2.png';
             link.download = 'Front-End_Web_Development_Certificate.jpg';
             document.body.appendChild(link);
             link.click();
