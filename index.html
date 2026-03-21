@@ -191,8 +191,10 @@
     position: relative;
     padding: 100px 0;
     overflow: hidden;
+    min-height: 100vh;
+    /* Add fallback background color */
+    background-color: #1a1a2e;
 }
-
 
 .hero::before {
     content: '';
@@ -205,9 +207,38 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
-    animation: bgChange 10s infinite;
+    /* Initial background image */
+    background-image: url('images/my4.jpeg');
+    animation: bgChange 12s infinite ease-in-out;
 }
 
+/* Fix the animation keyframes - make sure the paths are correct */
+@keyframes bgChange {
+    0% { 
+        background-image: url('images/my4.jpeg');
+        opacity: 1;
+    }
+    33% { 
+        background-image: url('images/my4.jpeg');
+        opacity: 1;
+    }
+    34% { 
+        background-image: url('images/my3.jpeg');
+        opacity: 1;
+    }
+    66% { 
+        background-image: url('./images/my3.jpeg');
+        opacity: 1;
+    }
+    67% { 
+        background-image: url('images/my.jpeg');
+        opacity: 1;
+    }
+    100% { 
+        background-image: url('./images/my.jpeg');
+        opacity: 1;
+    }
+}
 
 .hero .overlay {
     position: absolute;
@@ -215,25 +246,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(173, 216, 230, 0.5);
-    z-index: 1;
-}
-
-/* Animation for changing background */
-@keyframes bgChange {
-    0%   { background-image: url('./images/my4.jpg'); opacity: 1; }
-    50%  { background-image: url('./images/my3.jpeg'); opacity: 1; }
-    100% { background-image: url('./images/image.png'); opacity: 1; }
-}
-
-
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150%;
-    background-color: rgba(32, 32, 36, 0.7); 
+    background-color: rgba(0, 0, 0, 0.65); /* Darker overlay for better text readability */
     z-index: 1;
 }
 
@@ -246,6 +259,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    min-height: 80vh;
 }
 
 .hero-content {
