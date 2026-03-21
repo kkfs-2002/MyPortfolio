@@ -192,7 +192,6 @@
     padding: 100px 0;
     overflow: hidden;
     min-height: 100vh;
-    /* Add fallback background color */
     background-color: #1a1a2e;
 }
 
@@ -207,12 +206,10 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
-    /* Initial background image */
-    background-image: url('images/my4.jpeg');
     animation: bgChange 12s infinite ease-in-out;
 }
 
-/* Fix the animation keyframes - make sure the paths are correct */
+/* Animation for changing background */
 @keyframes bgChange {
     0% { 
         background-image: url('images/my4.jpeg');
@@ -227,7 +224,7 @@
         opacity: 1;
     }
     66% { 
-        background-image: url('./images/my3.jpeg');
+        background-image: url('images/my3.jpeg');
         opacity: 1;
     }
     67% { 
@@ -235,7 +232,7 @@
         opacity: 1;
     }
     100% { 
-        background-image: url('./images/my.jpeg');
+        background-image: url('images/my.jpeg');
         opacity: 1;
     }
 }
@@ -246,7 +243,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65); /* Darker overlay for better text readability */
+    background-color: rgba(32, 32, 36, 0.7);
     z-index: 1;
 }
 
@@ -255,11 +252,57 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     min-height: 80vh;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero-container {
+        min-height: auto;
+    }
+    
+    .hero-content .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero-content .title {
+        font-size: 2rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-content .role {
+        font-size: 1.2rem;
+    }
 }
 
 .hero-content {
