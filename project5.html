@@ -1,5 +1,3 @@
-Here is the HTML code that adds auto-play functionality to the video on your Bubble Tea Shop website project page.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -590,7 +588,6 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
             background: #000;
         }
 
-        /* Overlay hidden initially since video will auto-play */
         .video-overlay {
             position: absolute;
             top: 0;
@@ -598,17 +595,12 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            display: none; /* Hidden because autoplay will start */
+            display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 2;
-        }
-
-        /* Only show overlay if video is paused or fails to autoplay (fallback) */
-        .video-overlay.visible {
-            display: flex;
         }
 
         .video-overlay:hover {
@@ -1983,7 +1975,7 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
 </div>
 
 
-                    <!-- Project Video - AUTOPLAY ENABLED -->
+                    <!-- Project Video -->
 <div class="project-video">
     <div class="video-section-header">
         <h3><i class="fas fa-play-circle"></i> Bubble Tea Preparation Video</h3>
@@ -2006,12 +1998,13 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
 
     <div class="video-player-container">
       <div class="video-player">
-        <video id="projectVideo" controls autoplay muted playsinline loop>
-            <source src="https://drive.google.com/uc?export=download&id=1_n9fD1lwMvPKDKsFyozqL53JnAPzbSvR" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <video id="projectVideo" controls poster="images/bubble/bubble.jpeg">
+        <source src="https://drive.google.com/uc?export=download&id=1_n9fD1lwMvPKDKsFyozqL53JnAPzbSvR" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-            <div class="video-overlay" id="videoOverlay" onclick="playVideo()">
+
+            <div class="video-overlay" onclick="playVideo()">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
@@ -2021,7 +2014,7 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
         <!-- Controls -->
         <div class="video-controls">
             <button class="play-pause-btn" onclick="togglePlay()">
-                <i class="fas fa-pause" id="playIcon"></i>
+                <i class="fas fa-play" id="playIcon"></i>
             </button>
 
             <div class="progress-container">
@@ -2284,7 +2277,7 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
 
         // Video Player Elements
         const video = document.getElementById('projectVideo');
-        const videoOverlay = document.getElementById('videoOverlay');
+        const videoOverlay = document.querySelector('.video-overlay');
         const playIcon = document.getElementById('playIcon');
         const progress = document.getElementById('progress');
         const currentTimeEl = document.getElementById('currentTime');
@@ -2304,8 +2297,6 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
             durationEl.textContent = formatTime(video.duration);
             video.volume = 0.8; // Set default volume
             updateVolumeUI();
-            // Autoplay is already set via autoplay attribute, ensure overlay is hidden initially
-            videoOverlay.style.display = 'none';
         });
 
         // Update progress bar
@@ -2315,7 +2306,7 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
             currentTimeEl.textContent = formatTime(video.currentTime);
         });
 
-        // Play video from overlay (fallback if needed)
+        // Play video from overlay
         function playVideo() {
             video.play();
             videoOverlay.style.display = 'none';
@@ -2334,8 +2325,6 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
                 video.pause();
                 playIcon.classList.remove('fa-pause');
                 playIcon.classList.add('fa-play');
-                // Show overlay when paused manually
-                videoOverlay.style.display = 'flex';
             }
         }
 
@@ -2418,9 +2407,10 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
 
         // Lightbox functionality
         const images = [
-            'images/bubble/bubble.jpeg',
-            'images/bubble/bubble1.jpeg',
-            'images/bubble/bubble2.jpeg'
+            'images/projects3.png',
+            'images/company-dashboard.jpg',
+            'images/employee-management.jpg',
+            'images/project-tracking.jpg'
         ];
         
         let currentImageIndex = 0;
@@ -2484,7 +2474,7 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
             });
         });
 
-        // Video ended event - show overlay with replay option
+        // Video ended event
         video.addEventListener('ended', function() {
             videoOverlay.style.display = 'flex';
             playIcon.classList.remove('fa-pause');
@@ -2502,26 +2492,6 @@ Here is the HTML code that adds auto-play functionality to the video on your Bub
 
         // Touch-friendly interactions
         document.addEventListener('touchstart', function() {}, {passive: true});
-        
-        // Ensure video starts playing automatically (additional safety)
-        window.addEventListener('load', function() {
-            let playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    // Autoplay started successfully
-                    videoOverlay.style.display = 'none';
-                    playIcon.classList.remove('fa-play');
-                    playIcon.classList.add('fa-pause');
-                }).catch(error => {
-                    // Autoplay was prevented (e.g., by browser policy) - show overlay
-                    console.log("Autoplay blocked:", error);
-                    videoOverlay.style.display = 'flex';
-                    playIcon.classList.remove('fa-pause');
-                    playIcon.classList.add('fa-play');
-                });
-            }
-        });
     </script>
 </body>
 </html>
-```
