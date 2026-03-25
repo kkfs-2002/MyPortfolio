@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Portfolio | Jewelry Management System</title>
     <style>
+        /* All your existing CSS remains exactly the same */
         * {
             margin: 0;
             padding: 0;
@@ -259,7 +260,6 @@
             }
         }
 
-        /* Rest of your CSS remains the same... */
         /* Page Header / Banner */
         .page-header {
             position: relative;
@@ -934,7 +934,7 @@
         .video-player {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
         }
 
@@ -1303,6 +1303,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
+            display: none;
         }
 
         .spinner {
@@ -1688,7 +1689,6 @@
         </div>
     </header>
 
-    <!-- Rest of your HTML content remains the same -->
     <!-- Hero Section -->
     <section class="page-header">
         <div class="content">
@@ -1880,169 +1880,171 @@
                             </div>
                         </div>
                     </div>
- <div class="project-video">
-                    <div class="video-section-header">
-                        <h3><i class="fas fa-play-circle"></i> System Demonstration Video</h3>
-                        <div class="video-stats-badge">
-                            <div class="stat-badge">
-                                <i class="fas fa-hd"></i>
-                                <span>1080p HD</span>
-                            </div>
-                            <div class="stat-badge">
-                                <i class="fas fa-clock"></i>
-                                <span>5:30</span>
-                            </div>
-                            <div class="stat-badge">
-                                <i class="fas fa-volume-up"></i>
-                                <span>Audio</span>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <div class="video-player-container">
-                        <!-- Video loading indicator -->
-                        <div class="video-loading" id="videoLoading">
-                            <div class="spinner"></div>
-                        </div>
-                        
-                        <!-- Video error message -->
-                        <div class="video-error" id="videoError">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <p>Failed to load video. Please check your internet connection.</p>
-                        </div>
-                        
-                        <!-- Video player -->
-                        <div class="video-player">
-                            <video id="projectVideo" poster="images/jewallary/jew.jpeg" preload="metadata">
-                                <source src="images/jewallary/jw1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            
-                            <!-- Video overlay with play button -->
-                            <div class="video-overlay" id="videoOverlay">
-                                <div class="play-btn" id="playOverlayBtn">
-                                    <i class="fas fa-play"></i>
+                    <!-- Project Video -->
+                    <div class="project-video">
+                        <div class="video-section-header">
+                            <h3><i class="fas fa-play-circle"></i> System Demonstration Video</h3>
+                            <div class="video-stats-badge">
+                                <div class="stat-badge">
+                                    <i class="fas fa-hd"></i>
+                                    <span>1080p HD</span>
+                                </div>
+                                <div class="stat-badge">
+                                    <i class="fas fa-clock"></i>
+                                    <span>5:30</span>
+                                </div>
+                                <div class="stat-badge">
+                                    <i class="fas fa-volume-up"></i>
+                                    <span>Audio</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Video controls -->
-                        <div class="video-controls">
-                            <button class="play-pause-btn" id="playPauseBtn">
-                                <i class="fas fa-play" id="playIcon"></i>
-                            </button>
-                            
-                            <div class="progress-container">
-                                <div class="progress-bar" id="progressBar">
-                                    <div class="progress" id="progress"></div>
-                                    <div class="progress-handle" id="progressHandle"></div>
-                                </div>
-                                <span class="time-display">
-                                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-                                </span>
+                        <div class="video-player-container">
+                            <!-- Video loading indicator -->
+                            <div class="video-loading" id="videoLoading">
+                                <div class="spinner"></div>
                             </div>
                             
-                            <div class="volume-control">
-                                <button class="volume-btn" id="volumeBtn">
-                                    <i class="fas fa-volume-up" id="volumeIcon"></i>
-                                </button>
-                                <div class="volume-slider-container">
-                                    <div class="volume-slider" id="volumeSlider">
-                                        <div class="volume-level" id="volumeLevel"></div>
-                                        <div class="volume-slider-handle" id="volumeHandle"></div>
+                            <!-- Video error message -->
+                            <div class="video-error" id="videoError">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p>Failed to load video. Please check your internet connection.</p>
+                            </div>
+                            
+                            <!-- Video player -->
+                            <div class="video-player">
+                                <video id="projectVideo" poster="images/jewallary/jew.jpeg" preload="metadata" autoplay loop muted playsinline>
+                                    <source src="https://res.cloudinary.com/dtz3ahxbf/video/upload/Screen_Recording_2026-01-13_133855_g3yhmf.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                
+                                <!-- Video overlay with play button -->
+                                <div class="video-overlay" id="videoOverlay">
+                                    <div class="play-btn" id="playOverlayBtn">
+                                        <i class="fas fa-play"></i>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="control-right">
-                                <div class="speed-control">
-                                    <button class="speed-btn" id="speedBtn">1x</button>
-                                    <div class="speed-menu" id="speedMenu">
-                                        <button class="speed-option active" data-speed="0.5">0.5x</button>
-                                        <button class="speed-option" data-speed="0.75">0.75x</button>
-                                        <button class="speed-option" data-speed="1">1x</button>
-                                        <button class="speed-option" data-speed="1.25">1.25x</button>
-                                        <button class="speed-option" data-speed="1.5">1.5x</button>
-                                        <button class="speed-option" data-speed="2">2x</button>
+                            <!-- Video controls -->
+                            <div class="video-controls">
+                                <button class="play-pause-btn" id="playPauseBtn">
+                                    <i class="fas fa-play" id="playIcon"></i>
+                                </button>
+                                
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="progressBar">
+                                        <div class="progress" id="progress"></div>
+                                        <div class="progress-handle" id="progressHandle"></div>
+                                    </div>
+                                    <span class="time-display">
+                                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                                    </span>
+                                </div>
+                                
+                                <div class="volume-control">
+                                    <button class="volume-btn" id="volumeBtn">
+                                        <i class="fas fa-volume-up" id="volumeIcon"></i>
+                                    </button>
+                                    <div class="volume-slider-container">
+                                        <div class="volume-slider" id="volumeSlider">
+                                            <div class="volume-level" id="volumeLevel"></div>
+                                            <div class="volume-slider-handle" id="volumeHandle"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <button class="fullscreen-btn" id="fullscreenBtn">
-                                    <i class="fas fa-expand"></i>
-                                </button>
+                                <div class="control-right">
+                                    <div class="speed-control">
+                                        <button class="speed-btn" id="speedBtn">1x</button>
+                                        <div class="speed-menu" id="speedMenu">
+                                            <button class="speed-option active" data-speed="0.5">0.5x</button>
+                                            <button class="speed-option" data-speed="0.75">0.75x</button>
+                                            <button class="speed-option" data-speed="1">1x</button>
+                                            <button class="speed-option" data-speed="1.25">1.25x</button>
+                                            <button class="speed-option" data-speed="1.5">1.5x</button>
+                                            <button class="speed-option" data-speed="2">2x</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="fullscreen-btn" id="fullscreenBtn">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Keyboard shortcuts hint -->
+                            <div class="shortcuts-hint" id="shortcutsHint">
+                                <div class="shortcut-item">
+                                    <span>Play/Pause</span>
+                                    <span class="shortcut-key">Space</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <span>Fullscreen</span>
+                                    <span class="shortcut-key">F</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <span>Mute</span>
+                                    <span class="shortcut-key">M</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Keyboard shortcuts hint -->
-                        <div class="shortcuts-hint" id="shortcutsHint">
-                            <div class="shortcut-item">
-                                <span>Play/Pause</span>
-                                <span class="shortcut-key">Space</span>
+                        <div class="video-info">
+                            <div class="video-description">
+                                Watch this comprehensive demonstration of the Jewelry Management System in action. 
+                                The video showcases key features including inventory management, sales processing, 
+                                customer relationship management, and advanced reporting capabilities.
                             </div>
-                            <div class="shortcut-item">
-                                <span>Fullscreen</span>
-                                <span class="shortcut-key">F</span>
-                            </div>
-                            <div class="shortcut-item">
-                                <span>Mute</span>
-                                <span class="shortcut-key">M</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="video-info">
-                        <div class="video-description">
-                            Watch this comprehensive demonstration of the Jewelry Management System in action. 
-                            The video showcases key features including inventory management, sales processing, 
-                            customer relationship management, and advanced reporting capabilities.
-                        </div>
-                        
-                        <div class="video-chapters">
-                            <div class="chapters-header">
-                                <i class="fas fa-list-ol"></i>
-                                <h4>Video Chapters</h4>
-                            </div>
-                            <div class="chapters-grid">
-                                <div class="chapter-item" onclick="seekToChapter(0)">
-                                    <div class="chapter-time">
-                                        <i class="far fa-clock"></i> 0:00
-                                    </div>
-                                    <div class="chapter-title">System Introduction</div>
+                            
+                            <div class="video-chapters">
+                                <div class="chapters-header">
+                                    <i class="fas fa-list-ol"></i>
+                                    <h4>Video Chapters</h4>
                                 </div>
-                                <div class="chapter-item" onclick="seekToChapter(60)">
-                                    <div class="chapter-time">
-                                        <i class="far fa-clock"></i> 1:00
+                                <div class="chapters-grid">
+                                    <div class="chapter-item" onclick="seekToChapter(0)">
+                                        <div class="chapter-time">
+                                            <i class="far fa-clock"></i> 0:00
+                                        </div>
+                                        <div class="chapter-title">System Introduction</div>
                                     </div>
-                                    <div class="chapter-title">Dashboard Overview</div>
-                                </div>
-                                <div class="chapter-item" onclick="seekToChapter(120)">
-                                    <div class="chapter-time">
-                                        <i class="far fa-clock"></i> 2:00
+                                    <div class="chapter-item" onclick="seekToChapter(60)">
+                                        <div class="chapter-time">
+                                            <i class="far fa-clock"></i> 1:00
+                                        </div>
+                                        <div class="chapter-title">Dashboard Overview</div>
                                     </div>
-                                    <div class="chapter-title">Inventory Management</div>
-                                </div>
-                                <div class="chapter-item" onclick="seekToChapter(180)">
-                                    <div class="chapter-time">
-                                        <i class="far fa-clock"></i> 3:00
+                                    <div class="chapter-item" onclick="seekToChapter(120)">
+                                        <div class="chapter-time">
+                                            <i class="far fa-clock"></i> 2:00
+                                        </div>
+                                        <div class="chapter-title">Inventory Management</div>
                                     </div>
-                                    <div class="chapter-title">Sales Processing</div>
-                                </div>
-                                <div class="chapter-item" onclick="seekToChapter(240)">
-                                    <div class="chapter-time">
-                                        <i class="far fa-clock"></i> 4:00
+                                    <div class="chapter-item" onclick="seekToChapter(180)">
+                                        <div class="chapter-time">
+                                            <i class="far fa-clock"></i> 3:00
+                                        </div>
+                                        <div class="chapter-title">Sales Processing</div>
                                     </div>
-                                    <div class="chapter-title">Customer Management</div>
-                                </div>
-                                <div class="chapter-item" onclick="seekToChapter(300)">
-                                    <div class="chapter-time">
-                                        <i class="far fa-clock"></i> 5:00
+                                    <div class="chapter-item" onclick="seekToChapter(240)">
+                                        <div class="chapter-time">
+                                            <i class="far fa-clock"></i> 4:00
+                                        </div>
+                                        <div class="chapter-title">Customer Management</div>
                                     </div>
-                                    <div class="chapter-title">Reports & Analytics</div>
+                                    <div class="chapter-item" onclick="seekToChapter(300)">
+                                        <div class="chapter-time">
+                                            <i class="far fa-clock"></i> 5:00
+                                        </div>
+                                        <div class="chapter-title">Reports & Analytics</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                     <!-- Database Schema -->
                     <div class="database-schema">
@@ -2132,9 +2134,6 @@
                         </div>
                     </div>
 
-                    
-                    </div>
-
                     <!-- Navigation Buttons -->
                     <div class="project-navigation">
                         <a href="project1.html" class="nav-btn prev">
@@ -2179,27 +2178,26 @@
                     <h3>Follow Me</h3>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/share/1AQt7hDaoz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="c:\Users\acer\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\36120AA5ACA2481639CF738D134EBF25786390CB\transfers\2026-03\WhatsApp Image 2026-01-14 at 09.56.26.jpeg" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/amashi.migara?igsh=cnY0em1tZHZiaTZj" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/migara-amashi-6ab1923a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://yourwebsite.com" target="_blank"> <i class="fas fa-globe"></i></a>
-
+                        <a href="#" target="_blank"> <i class="fas fa-globe"></i></a>
                     </div>
                 </div>
 
-               <div class="footer-column">
-    <h3>Quick Links</h3>
-    <ul class="footer-links two-column">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="project.html">Project</a></li>
-        <li><a href="work-experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="Certifications.html">Certifications</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links two-column">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="project.html">Project</a></li>
+                        <li><a href="work-experience.html">Experience</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="Certifications.html">Certifications</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
@@ -2299,7 +2297,7 @@
             }
         });
 
-        // Video Player Elements
+        // ========== VIDEO PLAYER FUNCTIONALITY ==========
         const video = document.getElementById('projectVideo');
         const videoOverlay = document.getElementById('videoOverlay');
         const playOverlayBtn = document.getElementById('playOverlayBtn');
@@ -2323,13 +2321,13 @@
         const videoError = document.getElementById('videoError');
         const shortcutsHint = document.getElementById('shortcutsHint');
 
-        // Video State
         let isDragging = false;
         let isVolumeDragging = false;
         let showShortcutsHint = false;
 
         // Format time in MM:SS
         function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
@@ -2337,104 +2335,86 @@
 
         // Initialize video player
         function initVideoPlayer() {
-            // Show loading indicator
             videoLoading.style.display = 'block';
             
-            // Video metadata loaded
             video.addEventListener('loadedmetadata', function() {
                 videoLoading.style.display = 'none';
                 durationEl.textContent = formatTime(video.duration);
-                video.volume = 0.8; // Set default volume
+                video.volume = 0.8;
                 updateVolumeUI();
             });
 
-            // Video can play
             video.addEventListener('canplay', function() {
                 videoLoading.style.display = 'none';
             });
 
-            // Video error handling
             video.addEventListener('error', function() {
                 videoLoading.style.display = 'none';
                 videoError.style.display = 'block';
                 videoOverlay.style.display = 'none';
             });
 
-            // Update progress bar and time
             video.addEventListener('timeupdate', function() {
                 if (!isDragging) {
                     const progressPercent = (video.currentTime / video.duration) * 100;
                     progress.style.width = `${progressPercent}%`;
-                    progressHandle.style.left = `${progressPercent}%`;
+                    if (progressHandle) progressHandle.style.left = `${progressPercent}%`;
                     currentTimeEl.textContent = formatTime(video.currentTime);
                 }
             });
 
-            // Video ended
             video.addEventListener('ended', function() {
                 videoOverlay.style.display = 'flex';
                 playIcon.classList.remove('fa-pause');
                 playIcon.classList.add('fa-play');
             });
 
-            // Video playing
             video.addEventListener('play', function() {
                 videoOverlay.classList.add('hidden');
                 playIcon.classList.remove('fa-play');
                 playIcon.classList.add('fa-pause');
             });
 
-            // Video paused
             video.addEventListener('pause', function() {
                 playIcon.classList.remove('fa-pause');
                 playIcon.classList.add('fa-play');
             });
 
-            // Video waiting (buffering)
             video.addEventListener('waiting', function() {
                 videoLoading.style.display = 'block';
             });
 
-            // Video playing again after buffering
             video.addEventListener('playing', function() {
                 videoLoading.style.display = 'none';
             });
         }
 
-        // Play/Pause functions
-        function playVideo() {
-            video.play().catch(error => {
-                console.error('Error playing video:', error);
-                videoError.style.display = 'block';
-            });
-        }
-
         function togglePlayPause() {
             if (video.paused) {
-                playVideo();
+                video.play().catch(error => {
+                    console.error('Error playing video:', error);
+                    videoError.style.display = 'block';
+                });
             } else {
                 video.pause();
             }
         }
 
-        // Seek video
         function seekVideo(event) {
             const rect = progressBar.getBoundingClientRect();
             const clickPosition = event.clientX - rect.left;
             const progressBarWidth = rect.width;
             const seekTime = (clickPosition / progressBarWidth) * video.duration;
-            
             video.currentTime = Math.max(0, Math.min(seekTime, video.duration));
         }
 
-        // Volume control
         function updateVolumeUI() {
             const volume = video.volume;
             const isMuted = video.muted;
             const volumePercent = isMuted ? 0 : volume * 100;
             
-            volumeLevel.style.height = `${volumePercent}%`;
-            volumeHandle.style.bottom = `${volumePercent}%`;
+            if (volumeLevel) volumeLevel.style.height = `${volumePercent}%`;
+            if (volumeHandle) volumeHandle.style.bottom = `${volumePercent}%`;
             
             if (isMuted || volume === 0) {
                 volumeIcon.classList.remove('fa-volume-up', 'fa-volume-down');
@@ -2460,12 +2440,10 @@
             updateVolumeUI();
         }
 
-        // Playback speed
         function changePlaybackSpeed(speed) {
             video.playbackRate = parseFloat(speed);
             speedBtn.textContent = `${speed}x`;
             
-            // Update active class
             speedOptions.forEach(option => {
                 option.classList.remove('active');
                 if (parseFloat(option.dataset.speed) === parseFloat(speed)) {
@@ -2474,7 +2452,6 @@
             });
         }
 
-        // Fullscreen
         function toggleFullscreen() {
             const container = document.querySelector('.video-player-container');
             
@@ -2486,8 +2463,6 @@
                 } else if (container.msRequestFullscreen) {
                     container.msRequestFullscreen();
                 }
-                
-                // Update icon
                 fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
             } else {
                 if (document.exitFullscreen) {
@@ -2497,35 +2472,115 @@
                 } else if (document.msExitFullscreen) {
                     document.msExitFullscreen();
                 }
-                
-                // Update icon
                 fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
             }
         }
 
-        // Chapter navigation
-        function seekToChapter(seconds) {
+        // Chapter navigation - GLOBAL FUNCTION
+        window.seekToChapter = function(seconds) {
             video.currentTime = seconds;
-            playVideo();
+            if (video.paused) {
+                video.play();
+            }
+            video.scrollIntoView({ behavior: 'smooth', block: 'center' });
             
-            // Highlight the clicked chapter
+            // Highlight clicked chapter
             const chapters = document.querySelectorAll('.chapter-item');
             chapters.forEach(chapter => {
                 chapter.style.background = 'rgba(52, 152, 219, 0.1)';
             });
-            event.currentTarget.style.background = 'rgba(52, 152, 219, 0.3)';
+            if (event && event.currentTarget) {
+                event.currentTarget.style.background = 'rgba(52, 152, 219, 0.3)';
+            }
+        };
+
+        // Event Listeners
+        if (playOverlayBtn) playOverlayBtn.addEventListener('click', togglePlayPause);
+        if (playPauseBtn) playPauseBtn.addEventListener('click', togglePlayPause);
+        if (videoOverlay) videoOverlay.addEventListener('click', togglePlayPause);
+
+        // Progress bar events
+        if (progressBar) {
+            progressBar.addEventListener('click', seekVideo);
+            
+            progressBar.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                seekVideo(e);
+                
+                const handleMove = function(moveEvent) {
+                    if (isDragging) seekVideo(moveEvent);
+                };
+                
+                const handleUp = function() {
+                    isDragging = false;
+                    document.removeEventListener('mousemove', handleMove);
+                    document.removeEventListener('mouseup', handleUp);
+                };
+                
+                document.addEventListener('mousemove', handleMove);
+                document.addEventListener('mouseup', handleUp);
+            });
         }
+
+        // Volume slider events
+        if (volumeSlider) {
+            volumeSlider.addEventListener('click', changeVolume);
+            
+            volumeSlider.addEventListener('mousedown', function(e) {
+                isVolumeDragging = true;
+                changeVolume(e);
+                
+                const handleMove = function(moveEvent) {
+                    if (isVolumeDragging) changeVolume(moveEvent);
+                };
+                
+                const handleUp = function() {
+                    isVolumeDragging = false;
+                    document.removeEventListener('mousemove', handleMove);
+                    document.removeEventListener('mouseup', handleUp);
+                };
+                
+                document.addEventListener('mousemove', handleMove);
+                document.addEventListener('mouseup', handleUp);
+            });
+        }
+
+        if (volumeBtn) {
+            volumeBtn.addEventListener('click', () => {
+                if (video.volume > 0) {
+                    video.volume = 0;
+                } else {
+                    video.volume = 0.8;
+                    video.muted = false;
+                }
+                updateVolumeUI();
+            });
+        }
+
+        // Speed control
+        if (speedBtn) {
+            speedBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                speedMenu.style.opacity = speedMenu.style.opacity === '1' ? '0' : '1';
+                speedMenu.style.pointerEvents = speedMenu.style.pointerEvents === 'all' ? 'none' : 'all';
+            });
+        }
+
+        speedOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                changePlaybackSpeed(this.dataset.speed);
+                speedMenu.style.opacity = '0';
+                speedMenu.style.pointerEvents = 'none';
+            });
+        });
+
+        if (fullscreenBtn) fullscreenBtn.addEventListener('click', toggleFullscreen);
 
         // Keyboard shortcuts
         document.addEventListener('keydown', function(e) {
-            // Don't trigger if user is typing in an input
-            if (e.target.tagName.toLowerCase() === 'input' || 
-                e.target.tagName.toLowerCase() === 'textarea') {
-                return;
-            }
+            if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea') return;
 
-            // Show shortcuts hint
-            if (!showShortcutsHint) {
+            if (!showShortcutsHint && shortcutsHint) {
                 shortcutsHint.classList.add('show');
                 showShortcutsHint = true;
                 setTimeout(() => {
@@ -2535,7 +2590,7 @@
             }
 
             switch(e.key.toLowerCase()) {
-                case ' ': // Spacebar
+                case ' ':
                 case 'k':
                     e.preventDefault();
                     togglePlayPause();
@@ -2546,8 +2601,7 @@
                     break;
                 case 'm':
                     e.preventDefault();
-                    video.muted = !video.muted;
-                    updateVolumeUI();
+                    if (volumeBtn) volumeBtn.click();
                     break;
                 case 'arrowleft':
                     e.preventDefault();
@@ -2568,216 +2622,68 @@
                     video.volume = Math.max(0, video.volume - 0.1);
                     updateVolumeUI();
                     break;
-                case '>':
-                case '.':
-                    e.preventDefault();
-                    video.playbackRate = Math.min(4, video.playbackRate + 0.25);
-                    changePlaybackSpeed(video.playbackRate.toFixed(2));
-                    break;
-                case '<':
-                case ',':
-                    e.preventDefault();
-                    video.playbackRate = Math.max(0.25, video.playbackRate - 0.25);
-                    changePlaybackSpeed(video.playbackRate.toFixed(2));
-                    break;
             }
         });
-
-        // Event Listeners
-        playOverlayBtn.addEventListener('click', playVideo);
-        playPauseBtn.addEventListener('click', togglePlayPause);
-        videoOverlay.addEventListener('click', playVideo);
-
-        // Progress bar events
-        progressBar.addEventListener('click', seekVideo);
-        
-        progressBar.addEventListener('mousedown', function(e) {
-            isDragging = true;
-            seekVideo(e);
-            
-            const handleMove = function(moveEvent) {
-                if (isDragging) {
-                    seekVideo(moveEvent);
-                }
-            };
-            
-            const handleUp = function() {
-                isDragging = false;
-                document.removeEventListener('mousemove', handleMove);
-                document.removeEventListener('mouseup', handleUp);
-            };
-            
-            document.addEventListener('mousemove', handleMove);
-            document.addEventListener('mouseup', handleUp);
-        });
-
-        // Volume slider events
-        volumeSlider.addEventListener('click', changeVolume);
-        
-        volumeSlider.addEventListener('mousedown', function(e) {
-            isVolumeDragging = true;
-            changeVolume(e);
-            
-            const handleMove = function(moveEvent) {
-                if (isVolumeDragging) {
-                    changeVolume(moveEvent);
-                }
-            };
-            
-            const handleUp = function() {
-                isVolumeDragging = false;
-                document.removeEventListener('mousemove', handleMove);
-                document.removeEventListener('mouseup', handleUp);
-            };
-            
-            document.addEventListener('mousemove', handleMove);
-            document.addEventListener('mouseup', handleUp);
-        });
-
-        // Speed control events
-        speedBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            speedMenu.style.opacity = speedMenu.style.opacity === '1' ? '0' : '1';
-            speedMenu.style.pointerEvents = speedMenu.style.pointerEvents === 'all' ? 'none' : 'all';
-        });
-
-        speedOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                changePlaybackSpeed(this.dataset.speed);
-            });
-        });
-
-        // Close speed menu when clicking outside
-        document.addEventListener('click', function() {
-            speedMenu.style.opacity = '0';
-            speedMenu.style.pointerEvents = 'none';
-        });
-
-        speedMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-
-        // Fullscreen button
-        fullscreenBtn.addEventListener('click', toggleFullscreen);
-
-        // Fullscreen change events
-        document.addEventListener('fullscreenchange', updateFullscreenIcon);
-        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
-        document.addEventListener('msfullscreenchange', updateFullscreenIcon);
-
-        function updateFullscreenIcon() {
-            if (document.fullscreenElement || 
-                document.webkitFullscreenElement || 
-                document.msFullscreenElement) {
-                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
-            } else {
-                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
-            }
-        }
 
         // Lightbox functionality
-        const images = [
-            'images/projects.png',
-            'images/jewelry-inventory.jpg',
-            'images/jewelry-sales.jpg',
-            'images/jewelry-reports.jpg'
-        ];
-        
         let currentImageIndex = 0;
 
-        function openLightbox(imageSrc) {
+        window.openLightbox = function(imageSrc) {
             const lightbox = document.getElementById('lightboxModal');
             const lightboxImage = document.getElementById('lightboxImage');
-            
-            // Find the index of clicked image
-            currentImageIndex = images.indexOf(imageSrc);
-            if (currentImageIndex === -1) currentImageIndex = 0;
-            
-            lightboxImage.src = imageSrc;
-            lightbox.style.display = 'block';
+            if (lightboxImage) lightboxImage.src = imageSrc;
+            if (lightbox) lightbox.style.display = 'block';
             document.body.style.overflow = 'hidden';
-        }
+        };
 
-        function closeLightbox() {
+        window.closeLightbox = function() {
             const lightbox = document.getElementById('lightboxModal');
-            lightbox.style.display = 'none';
+            if (lightbox) lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
+        };
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            document.getElementById('lightboxImage').src = images[currentImageIndex];
-        }
+        window.nextImage = function() {
+            const imagesList = document.querySelectorAll('.gallery-item img');
+            const currentImg = document.getElementById('lightboxImage');
+            if (currentImg && imagesList.length > 0) {
+                let found = false;
+                for (let i = 0; i < imagesList.length; i++) {
+                    if (imagesList[i].src === currentImg.src) {
+                        const nextIndex = (i + 1) % imagesList.length;
+                        currentImg.src = imagesList[nextIndex].src;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found && imagesList[0]) currentImg.src = imagesList[0].src;
+            }
+        };
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            document.getElementById('lightboxImage').src = images[currentImageIndex];
-        }
+        window.prevImage = function() {
+            const imagesList = document.querySelectorAll('.gallery-item img');
+            const currentImg = document.getElementById('lightboxImage');
+            if (currentImg && imagesList.length > 0) {
+                let found = false;
+                for (let i = 0; i < imagesList.length; i++) {
+                    if (imagesList[i].src === currentImg.src) {
+                        const prevIndex = (i - 1 + imagesList.length) % imagesList.length;
+                        currentImg.src = imagesList[prevIndex].src;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found && imagesList[0]) currentImg.src = imagesList[0].src;
+            }
+        };
 
         // Close lightbox with ESC key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
-            if (e.key === 'ArrowRight') {
-                nextImage();
-            }
-            if (e.key === 'ArrowLeft') {
-                prevImage();
-            }
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href').startsWith('#') && this.getAttribute('href').length > 1) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        if (window.innerWidth <= 992) {
-                            menuToggle.classList.remove('active');
-                            navLinks.classList.remove('active');
-                            overlay.classList.remove('active');
-                            document.body.style.overflow = '';
-                        }
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Add active class to current nav item
-        const sections = document.querySelectorAll('section[id]');
-        const navLinksAll = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinksAll.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Initialize video player
+        // Initialize video player on page load
         window.addEventListener('DOMContentLoaded', initVideoPlayer);
     </script>
 </body>
