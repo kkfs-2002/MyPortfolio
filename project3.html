@@ -213,7 +213,6 @@
                 justify-content: space-between;
             }
 
-            /* Dropdown for mobile */
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -242,7 +241,6 @@
                 display: none;
             }
 
-            /* Overlay */
             .overlay {
                 display: none;
                 position: fixed;
@@ -259,7 +257,6 @@
             }
         }
 
-        /* Rest of your CSS remains the same... */
         /* Page Header / Banner */
         .page-header {
             position: relative;
@@ -667,7 +664,7 @@
         .video-player {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
         }
 
@@ -698,6 +695,11 @@
 
         .video-overlay:hover {
             background: rgba(0, 0, 0, 0.7);
+        }
+
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .play-btn {
@@ -1260,7 +1262,8 @@
                             <li><a href="project2.html">Project 02</a></li>
                             <li><a href="project3.html">Project 03</a></li>
                             <li><a href="project4.html">Project 04</a></li>
-                             <li><a href="project5.html">Project 05</a></li>
+                            <li><a href="project5.html">Project 05</a></li>
+                            <li><a href="project6.html">Project 06</a></li>
                         </ul>
                     </li>
                     <li><a href="work-experience.html">Experience</a></li>
@@ -1284,7 +1287,6 @@
         </div>
     </header>
 
-    <!-- Rest of your HTML content remains the same -->
     <!-- Hero Section -->
     <section class="page-header">
         <div class="content">
@@ -1453,7 +1455,7 @@
                     <div class="project-gallery">
                         <div class="gallery-header">
                             <h3>System Screenshots</h3>
-                            <span class="gallery-count">4 Images</span>
+                            <span class="gallery-count">3 Images</span>
                         </div>
                         <div class="gallery-grid">
                             <div class="gallery-item large" onclick="openLightbox('images/property/property.jpeg')">
@@ -1477,7 +1479,7 @@
                         </div>
                     </div>
 
-                    <!-- Project Video -->
+                    <!-- Project Video - UPDATED WITH CLOUDINARY URL -->
                     <div class="project-video">
                         <div class="video-section-header">
                             <h3><i class="fas fa-play-circle"></i> System Demonstration Video</h3>
@@ -1499,12 +1501,13 @@
                         
                         <div class="video-player-container">
                             <div class="video-player">
-                                <video id="projectVideo" poster="images/property/property.jpeg">
-                                    <source src="images/property/property.mp4" type="video/mp4">
+                                <video id="projectVideo" poster="images/property/property.jpeg" autoplay loop muted playsinline>
+                                    <!-- ✅ UPDATED: Cloudinary Direct Video URL -->
+                                    <source src="https://res.cloudinary.com/dtz3ahxbf/video/upload/project2_ijtuyc.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <div class="video-overlay" onclick="playVideo()">
-                                    <div class="play-btn">
+                                <div class="video-overlay" id="videoOverlay">
+                                    <div class="play-btn" id="playBtn">
                                         <i class="fas fa-play"></i>
                                     </div>
                                 </div>
@@ -1562,8 +1565,6 @@
                         <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 24px;">System Architecture</h3>
                         <p style="color: #e0e0e0; margin-bottom: 20px;">The system follows a modern MVC architecture with modular design for scalability and maintainability.</p>
                         
-                     
-                        
                         <div class="architecture-layers">
                             <div class="layer-item">
                                 <div class="layer-icon">
@@ -1607,7 +1608,6 @@
                                 <i class="fas fa-external-link-alt"></i>
                                 <span>Live Demo</span>
                             </a>
-                           
                         </div>
                     </div>
 
@@ -1653,27 +1653,28 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Follow Me</h3>
-                   <div class="footer-social">
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/share/1AQt7hDaoz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/amashi.migara?igsh=cnY0em1tZHZiaTZj" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/migara-amashi-6ab1923a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://yourwebsite.com" target="_blank"> <i class="fas fa-globe"></i></a>
+                        <a href="https://yourwebsite.com" target="_blank"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
-<div class="footer-column">
-    <h3>Quick Links</h3>
-    <ul class="footer-links two-column">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="project.html">Project</a></li>
-        <li><a href="work-experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="Certifications.html">Certifications</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links two-column">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="project.html">Project</a></li>
+                        <li><a href="work-experience.html">Experience</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="Certifications.html">Certifications</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
@@ -1705,7 +1706,6 @@
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Close menu when clicking overlay
         overlay.addEventListener('click', () => {
             menuToggle.classList.remove('active');
             navLinks.classList.remove('active');
@@ -1713,7 +1713,6 @@
             document.body.style.overflow = '';
         });
 
-        // Mobile dropdown handling
         dropdowns.forEach(dropdown => {
             const link = dropdown.querySelector('a');
             const menu = dropdown.querySelector('.dropdown-menu');
@@ -1723,7 +1722,6 @@
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    // Close other open dropdowns
                     dropdowns.forEach(otherDropdown => {
                         if (otherDropdown !== dropdown) {
                             otherDropdown.querySelector('.dropdown-menu').classList.remove('active');
@@ -1735,7 +1733,6 @@
             });
         });
 
-        // Close dropdowns when clicking outside on mobile
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 992) {
                 if (!e.target.closest('.dropdown')) {
@@ -1746,7 +1743,6 @@
             }
         });
 
-        // Close mobile menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 992) {
@@ -1755,7 +1751,6 @@
                     overlay.classList.remove('active');
                     document.body.style.overflow = '';
                     
-                    // Close all dropdowns
                     dropdowns.forEach(dropdown => {
                         dropdown.querySelector('.dropdown-menu').classList.remove('active');
                     });
@@ -1763,7 +1758,6 @@
             });
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('main-header');
             if (window.scrollY > 100) {
@@ -1773,130 +1767,112 @@
             }
         });
 
-        // Video Player Functionality
+        // ========== VIDEO PLAYER FUNCTIONALITY ==========
         const video = document.getElementById('projectVideo');
-        const videoOverlay = document.querySelector('.video-overlay');
+        const videoOverlay = document.getElementById('videoOverlay');
+        const playBtn = document.getElementById('playBtn');
 
         function playVideo() {
-            video.play();
-            videoOverlay.style.display = 'none';
-            
-            video.addEventListener('ended', function() {
-                videoOverlay.style.display = 'flex';
+            video.play().catch(error => {
+                console.log('Autoplay prevented:', error);
+            });
+            videoOverlay.classList.add('hidden');
+        }
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                videoOverlay.classList.add('hidden');
+            } else {
+                video.pause();
+                videoOverlay.classList.remove('hidden');
+            }
+        }
+
+        if (playBtn) {
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                togglePlay();
             });
         }
 
+        if (videoOverlay) {
+            videoOverlay.addEventListener('click', togglePlay);
+        }
+
+        video.addEventListener('ended', () => {
+            videoOverlay.classList.remove('hidden');
+        });
+
+        video.addEventListener('play', () => {
+            videoOverlay.classList.add('hidden');
+        });
+
+        video.addEventListener('pause', () => {
+            videoOverlay.classList.remove('hidden');
+        });
+
+        // Chapter navigation
+        window.seekToChapter = function(seconds) {
+            video.currentTime = seconds;
+            playVideo();
+            // Highlight clicked chapter
+            const chapters = document.querySelectorAll('.chapter-item');
+            chapters.forEach(chapter => {
+                chapter.style.background = 'rgba(52, 152, 219, 0.1)';
+            });
+            if (event && event.currentTarget) {
+                event.currentTarget.style.background = 'rgba(52, 152, 219, 0.3)';
+            }
+        };
+
         // Lightbox functionality
-        const images = [
-            'images/projects2.png',
-            'images/property-dashboard.jpg',
-            'images/tenant-management.jpg',
-            'images/property-reports.jpg'
+        const galleryImages = [
+            'images/property/property.jpeg',
+            'images/property/property1.jpeg',
+            'images/property/property2.jpeg'
         ];
         
         let currentImageIndex = 0;
 
-        function openLightbox(imageSrc) {
+        window.openLightbox = function(imageSrc) {
             const lightbox = document.getElementById('lightboxModal');
             const lightboxImage = document.getElementById('lightboxImage');
             
-            // Find the index of clicked image
-            currentImageIndex = images.indexOf(imageSrc);
+            currentImageIndex = galleryImages.indexOf(imageSrc);
             if (currentImageIndex === -1) currentImageIndex = 0;
             
             lightboxImage.src = imageSrc;
             lightbox.style.display = 'block';
             document.body.style.overflow = 'hidden';
-        }
+        };
 
-        function closeLightbox() {
+        window.closeLightbox = function() {
             const lightbox = document.getElementById('lightboxModal');
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
+        };
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            document.getElementById('lightboxImage').src = images[currentImageIndex];
-        }
+        window.nextImage = function() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+        };
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            document.getElementById('lightboxImage').src = images[currentImageIndex];
-        }
+        window.prevImage = function() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+        };
 
-        // Close lightbox with ESC key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-            if (e.key === 'ArrowRight') {
-                nextImage();
-            }
-            if (e.key === 'ArrowLeft') {
-                prevImage();
-            }
-        });
-
-        // Video chapter navigation
-        function seekToChapter(seconds) {
-            video.currentTime = seconds;
-            playVideo();
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href').startsWith('#') && this.getAttribute('href').length > 1) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === ' ' || e.key === 'Space') {
+                if (document.activeElement !== video) {
                     e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        if (window.innerWidth <= 992) {
-                            menuToggle.classList.remove('active');
-                            navLinks.classList.remove('active');
-                            overlay.classList.remove('active');
-                            document.body.style.overflow = '';
-                        }
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+                    togglePlay();
                 }
-            });
-        });
-
-        // Add active class to current nav item
-        const sections = document.querySelectorAll('section[id]');
-        const navLinksAll = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinksAll.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Pause video when modal closes
-        video.addEventListener('play', function() {
-            videoOverlay.style.display = 'none';
+            }
         });
     </script>
 </body>

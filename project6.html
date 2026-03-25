@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Portfolio | Company Management System</title>
+    <title>Portfolio | Food Delivery Website - MERN + TypeScript</title>
     <style>
         * {
             margin: 0;
@@ -370,7 +370,7 @@
             font-size: 14px;
         }
 
-        /* System Modules */
+        /* System Modules / Features */
         .system-modules {
             margin-bottom: 40px;
         }
@@ -574,7 +574,7 @@
         .video-player {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
         }
 
@@ -601,10 +601,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 2;
-        }
-
-        .video-overlay:hover {
-            background: rgba(0, 0, 0, 0.7);
         }
 
         .video-overlay.hidden {
@@ -805,88 +801,6 @@
             color: #ffffff;
             font-size: 13px;
             font-weight: 500;
-        }
-
-        /* Database Structure */
-        .database-structure {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 40px;
-        }
-
-        .database-structure h3 {
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .database-structure p {
-            color: #e0e0e0;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .tables-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .table-card {
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 10px;
-            padding: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .table-card:hover {
-            background: rgba(52, 152, 219, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .table-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(52, 152, 219, 0.3);
-        }
-
-        .table-icon {
-            width: 32px;
-            height: 32px;
-            background: rgba(52, 152, 219, 0.2);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #3498db;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-
-        .table-header h5 {
-            color: #ffffff;
-            font-size: 15px;
-        }
-
-        .table-fields {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .table-fields li {
-            color: #e0e0e0;
-            font-size: 12px;
-            margin-bottom: 5px;
-            padding: 4px 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            font-family: monospace;
-            word-break: break-word;
         }
 
         /* API Endpoints */
@@ -1365,10 +1279,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .tables-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .endpoints-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1442,10 +1352,6 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-            }
-            
-            .tables-grid {
-                grid-template-columns: repeat(4, 1fr);
             }
             
             .endpoints-grid {
@@ -1573,7 +1479,6 @@
                 font-size: 16px;
             }
             
-            .database-structure,
             .api-endpoints {
                 padding: 20px 15px;
             }
@@ -1681,16 +1586,18 @@
                 </button>
                 <a href="#" class="logo">Portfolio<span>.</span></a>
                 <ul class="nav-links">
-                   <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li class="dropdown">
                         <a href="#">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="project.html">Project</a></li>
+                            <li><a href="project.html">All Projects</a></li>
                             <li><a href="project1.html">Project 01</a></li>
                             <li><a href="project2.html">Project 02</a></li>
                             <li><a href="project3.html">Project 03</a></li>
                             <li><a href="project4.html">Project 04</a></li>
+                            <li><a href="project5.html">Project 05</a></li>
+                            <li><a href="project6.html">Project 06</a></li>
                         </ul>
                     </li>
                     <li><a href="work-experience.html">Experience</a></li>
@@ -1754,9 +1661,9 @@
     <!-- Hero Section -->
     <section class="page-header">
         <div class="content">
-            <span class="project-tag">Enterprise HR System</span>
-            <h1>Company Management System</h1>
-            <p><a href="index.html">Home</a> > <a href="projects.html">Projects</a> > Project 04</p>
+            <span class="project-tag">Full Stack Application</span>
+            <h1>Food Delivery Website</h1>
+            <p><a href="index.html">Home</a> > <a href="project.html">Projects</a> > Project 06</p>
         </div>
     </section>
 
@@ -1764,17 +1671,18 @@
     <section class="project-details">
         <div class="container">
             <div class="project-container">
+
                 <!-- Project Overview -->
                 <div class="project-overview">
                     <div class="project-header">
                         <div class="project-title">
                             <h2>Project Overview</h2>
-                            <p>A comprehensive Laravel-based system for company HR and project management</p>
+                            <p>A modern, full-stack food ordering platform with real-time tracking and secure authentication</p>
                         </div>
                         <div class="project-meta">
                             <div class="meta-item">
                                 <span class="meta-label">Category</span>
-                                <span class="meta-value">Laravel System</span>
+                                <span class="meta-value">Full Stack Web App</span>
                             </div>
                             <div class="meta-item">
                                 <span class="meta-label">Year</span>
@@ -1792,21 +1700,21 @@
                         <div class="description-content">
                             <div class="main-description">
                                 <h3>About This Project</h3>
-                                <p>This is an enterprise-level Company Management System developed using Laravel framework. The system is designed to help companies manage their human resources, projects, tasks, and internal operations efficiently from a single platform.</p>
+                                <p>This is a full-featured Food Delivery Platform developed using the MERN stack (MongoDB, Express.js, React.js, Node.js) with TypeScript for enhanced type safety. The system enables customers to browse restaurants, place orders, track deliveries in real-time, and manage their profiles securely.</p>
                                 
-                                <p>The application provides comprehensive modules for employee management, project tracking, task assignment, attendance tracking, leave management, and performance evaluation. It features role-based access control for different organizational levels.</p>
+                                <p>The application includes separate dashboards for customers, restaurant owners, and admin users. Features include secure JWT authentication, real-time order tracking via WebSockets, restaurant menu management, and an intuitive checkout process with multiple payment options.</p>
                                 
                                 <h4>Project Objectives:</h4>
                                 <ul>
-                                    <li>Create a centralized HR management system</li>
-                                    <li>Implement employee onboarding and profile management</li>
-                                    <li>Develop project and task management with tracking</li>
-                                    <li>Build attendance and leave management system</li>
-                                    <li>Create performance evaluation and reporting</li>
-                                    <li>Implement internal communication features</li>
+                                    <li>Build a scalable food ordering platform with MERN stack + TypeScript</li>
+                                    <li>Implement secure user authentication and role-based access control</li>
+                                    <li>Create real-time order tracking system using Socket.io</li>
+                                    <li>Develop restaurant management dashboard for menu and order handling</li>
+                                    <li>Implement seamless checkout with cart management</li>
+                                    <li>Build comprehensive admin panel for platform oversight</li>
                                 </ul>
                                 
-                                <p>The system follows modern web development practices and includes RESTful API endpoints for mobile app integration. It features real-time notifications, document management, and comprehensive reporting capabilities.</p>
+                                <p>The system follows modern development practices with clean code architecture, type safety through TypeScript, and optimized database queries for performance. RESTful APIs are used for seamless communication between frontend and backend.</p>
                             </div>
                             
                             <div class="tech-stack">
@@ -1814,88 +1722,106 @@
                                 <div class="tech-list">
                                     <div class="tech-item">
                                         <div class="tech-icon">
-                                            <i class="fab fa-laravel"></i>
+                                            <i class="fab fa-react"></i>
                                         </div>
-                                        <span class="tech-name">Laravel 11</span>
+                                        <span class="tech-name">React.js</span>
                                     </div>
                                     <div class="tech-item">
                                         <div class="tech-icon">
-                                            <i class="fab fa-php"></i>
+                                            <i class="fab fa-node-js"></i>
                                         </div>
-                                        <span class="tech-name">PHP 8.2</span>
+                                        <span class="tech-name">Node.js</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <span class="tech-name">Express.js</span>
                                     </div>
                                     <div class="tech-item">
                                         <div class="tech-icon">
                                             <i class="fas fa-database"></i>
                                         </div>
-                                        <span class="tech-name">MySQL</span>
+                                        <span class="tech-name">MongoDB</span>
                                     </div>
                                     <div class="tech-item">
                                         <div class="tech-icon">
-                                            <i class="fab fa-vuejs"></i>
+                                            <i class="fab fa-js"></i>
                                         </div>
-                                        <span class="tech-name">Vue.js</span>
+                                        <span class="tech-name">TypeScript</span>
                                     </div>
                                     <div class="tech-item">
                                         <div class="tech-icon">
-                                            <i class="fab fa-bootstrap"></i>
+                                            <i class="fab fa-tailwind"></i>
                                         </div>
-                                        <span class="tech-name">Bootstrap 5</span>
+                                        <span class="tech-name">Tailwind CSS</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <span class="tech-name">JWT Auth</span>
                                     </div>
                                     <div class="tech-item">
                                         <div class="tech-icon">
                                             <i class="fas fa-broadcast-tower"></i>
                                         </div>
-                                        <span class="tech-name">WebSocket</span>
+                                        <span class="tech-name">Socket.io</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fab fa-stripe"></i>
+                                        </div>
+                                        <span class="tech-name">Stripe API</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- System Modules -->
+                    <!-- System Features -->
                     <div class="system-modules">
-                        <h3>System Modules</h3>
+                        <h3>Key Features</h3>
                         <div class="modules-grid">
                             <div class="module-card">
                                 <div class="module-icon">
-                                    <i class="fas fa-users"></i>
+                                    <i class="fas fa-user-shield"></i>
                                 </div>
-                                <h4>HR Management</h4>
+                                <h4>Authentication & Security</h4>
                                 <ul class="module-features">
-                                    <li>Employee profiles & onboarding</li>
-                                    <li>Department & role management</li>
-                                    <li>Salary structure management</li>
-                                    <li>Document verification</li>
-                                    <li>Employee database</li>
+                                    <li>JWT-based authentication</li>
+                                    <li>Role-based access control (Customer/Restaurant/Admin)</li>
+                                    <li>Password encryption with bcrypt</li>
+                                    <li>Email verification</li>
+                                    <li>Session management</li>
                                 </ul>
                             </div>
                             
                             <div class="module-card">
                                 <div class="module-icon">
-                                    <i class="fas fa-project-diagram"></i>
+                                    <i class="fas fa-utensils"></i>
                                 </div>
-                                <h4>Project Management</h4>
+                                <h4>Restaurant Management</h4>
                                 <ul class="module-features">
-                                    <li>Project creation & tracking</li>
-                                    <li>Task assignment & deadlines</li>
-                                    <li>Resource allocation</li>
-                                    <li>Progress monitoring</li>
-                                    <li>Milestone tracking</li>
+                                    <li>Restaurant profile creation</li>
+                                    <li>Menu item management</li>
+                                    <li>Order acceptance/rejection</li>
+                                    <li>Sales analytics dashboard</li>
+                                    <li>Promotion management</li>
                                 </ul>
                             </div>
                             
                             <div class="module-card">
                                 <div class="module-icon">
-                                    <i class="fas fa-calendar-check"></i>
+                                    <i class="fas fa-shopping-cart"></i>
                                 </div>
-                                <h4>Attendance & Leave</h4>
+                                <h4>Order Processing</h4>
                                 <ul class="module-features">
-                                    <li>Attendance tracking</li>
-                                    <li>Leave request management</li>
-                                    <li>Holiday calendar</li>
-                                    <li>Shift management</li>
-                                    <li>Overtime calculation</li>
+                                    <li>Add to cart functionality</li>
+                                    <li>Real-time order tracking</li>
+                                    <li>Multiple payment options</li>
+                                    <li>Order history & receipts</li>
+                                    <li>Order cancellation & refunds</li>
                                 </ul>
                             </div>
                             
@@ -1903,13 +1829,41 @@
                                 <div class="module-icon">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
-                                <h4>Performance & Reports</h4>
+                                <h4>Admin Dashboard</h4>
                                 <ul class="module-features">
-                                    <li>Performance evaluation</li>
-                                    <li>KPI tracking</li>
-                                    <li>Analytics dashboard</li>
-                                    <li>Report generation</li>
-                                    <li>Data export</li>
+                                    <li>User management</li>
+                                    <li>Restaurant verification</li>
+                                    <li>Platform analytics</li>
+                                    <li>Transaction monitoring</li>
+                                    <li>System configuration</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h4>Real-time Tracking</h4>
+                                <ul class="module-features">
+                                    <li>Live order status updates</li>
+                                    <li>Delivery agent assignment</li>
+                                    <li>Estimated delivery time</li>
+                                    <li>Location tracking</li>
+                                    <li>Push notifications</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4>Review & Rating</h4>
+                                <ul class="module-features">
+                                    <li>Restaurant rating system</li>
+                                    <li>Customer reviews</li>
+                                    <li>Photo uploads for reviews</li>
+                                    <li>Review moderation</li>
+                                    <li>Average rating display</li>
                                 </ul>
                             </div>
                         </div>
@@ -1918,24 +1872,30 @@
                     <!-- Project Gallery -->
                     <div class="project-gallery">
                         <div class="gallery-header">
-                            <h3>System Screenshots</h3>
-                            <span class="gallery-count">3 Images</span>
+                            <h3>Application Screenshots</h3>
+                            <span class="gallery-count">4 Images</span>
                         </div>
                         <div class="gallery-grid">
-                            <div class="gallery-item large" onclick="openLightbox('images/company/co.jpeg')">
-                                <img src="images/company/co.jpeg" alt="Company System Dashboard">
+                            <div class="gallery-item large" onclick="openLightbox('images/food/food_dashboard.jpeg')">
+                                <img src="images/food/food_dashboard.jpeg" alt="Food Delivery Dashboard">
                                 <div class="gallery-overlay">
                                     <i class="fas fa-search-plus"></i>
                                 </div>
                             </div>
-                            <div class="gallery-item" onclick="openLightbox('images/company/co1.jpeg')">
-                                <img src="images/company/co1.jpeg" alt="Company Dashboard">
+                            <div class="gallery-item" onclick="openLightbox('images/food/food.jpeg')">
+                                <img src="images/food/food.jpeg" alt="Restaurant Menu Page">
                                 <div class="gallery-overlay">
                                     <i class="fas fa-search-plus"></i>
                                 </div>
                             </div>
-                            <div class="gallery-item" onclick="openLightbox('images/company/co2.jpeg')">
-                                <img src="images/company/co2.jpeg" alt="Employee Management">
+                            <div class="gallery-item" onclick="openLightbox('images/food/food1.jpeg')">
+                                <img src="images/food/food1.jpeg" alt="Shopping Cart">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="gallery-item" onclick="openLightbox('images/food/food2.jpeg')">
+                                <img src="images/food/food2.jpeg" alt="Order Tracking">
                                 <div class="gallery-overlay">
                                     <i class="fas fa-search-plus"></i>
                                 </div>
@@ -1943,10 +1903,10 @@
                         </div>
                     </div>
 
-                    <!-- Project Video - UPDATED WITH CLOUDINARY URL -->
+                    <!-- Project Video -->
                     <div class="project-video">
                         <div class="video-section-header">
-                            <h3><i class="fas fa-play-circle"></i> System Demonstration Video</h3>
+                            <h3><i class="fas fa-play-circle"></i> Platform Demonstration Video</h3>
                             <div class="video-stats-badge">
                                 <div class="stat-badge">
                                     <i class="fas fa-hd"></i>
@@ -1954,7 +1914,7 @@
                                 </div>
                                 <div class="stat-badge">
                                     <i class="fas fa-clock"></i>
-                                    <span>7:15</span>
+                                    <span>4:30</span>
                                 </div>
                                 <div class="stat-badge">
                                     <i class="fas fa-volume-up"></i>
@@ -1965,11 +1925,10 @@
                         
                         <div class="video-player-container">
                             <div class="video-player">
-                                <video id="projectVideo" poster="images/company/co.jpeg" autoplay loop muted playsinline>
-                                    <!-- ✅ UPDATED: Cloudinary Direct Video URL -->
-                                    <source src="https://res.cloudinary.com/dtz3ahxbf/video/upload/project3_ma3vnj.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                               <video id="projectVideo" poster="images/food/food.jpeg" autoplay loop muted playsinline>
+    <source src="https://res.cloudinary.com/dtz3ahxbf/video/upload/20260325-0850-11.3747945_iq2n3i.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
                                 <div class="video-overlay" id="videoOverlay">
                                     <div class="play-btn" id="playBtn">
                                         <i class="fas fa-play"></i>
@@ -2007,7 +1966,7 @@
                             
                             <div class="video-info">
                                 <div class="video-description">
-                                    This video provides a comprehensive demonstration of the Company Management System, showcasing key features including HR management, project tracking, employee attendance, and performance evaluation modules.
+                                    This video demonstrates the complete Food Delivery Platform workflow - from browsing restaurants and adding items to cart, to placing orders with real-time tracking. The demo showcases the responsive UI, authentication flow, restaurant dashboard, and live order status updates powered by WebSockets.
                                 </div>
                                 
                                 <div class="video-chapters">
@@ -2022,29 +1981,35 @@
                                             </div>
                                             <div class="chapter-title">System Introduction</div>
                                         </div>
-                                        <div class="chapter-item" onclick="seekToChapter(60)">
+                                        <div class="chapter-item" onclick="seekToChapter(45)">
                                             <div class="chapter-time">
-                                                <i class="far fa-clock"></i> 1:00
+                                                <i class="far fa-clock"></i> 0:45
                                             </div>
-                                            <div class="chapter-title">HR Management</div>
+                                            <div class="chapter-title">User Registration & Login</div>
+                                        </div>
+                                        <div class="chapter-item" onclick="seekToChapter(90)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 1:30
+                                            </div>
+                                            <div class="chapter-title">Browsing Restaurants</div>
+                                        </div>
+                                        <div class="chapter-item" onclick="seekToChapter(135)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 2:15
+                                            </div>
+                                            <div class="chapter-title">Adding to Cart & Checkout</div>
                                         </div>
                                         <div class="chapter-item" onclick="seekToChapter(180)">
                                             <div class="chapter-time">
                                                 <i class="far fa-clock"></i> 3:00
                                             </div>
-                                            <div class="chapter-title">Project Management</div>
+                                            <div class="chapter-title">Real-time Order Tracking</div>
                                         </div>
-                                        <div class="chapter-item" onclick="seekToChapter(300)">
+                                        <div class="chapter-item" onclick="seekToChapter(240)">
                                             <div class="chapter-time">
-                                                <i class="far fa-clock"></i> 5:00
+                                                <i class="far fa-clock"></i> 4:00
                                             </div>
-                                            <div class="chapter-title">Attendance System</div>
-                                        </div>
-                                        <div class="chapter-item" onclick="seekToChapter(420)">
-                                            <div class="chapter-time">
-                                                <i class="far fa-clock"></i> 7:00
-                                            </div>
-                                            <div class="chapter-title">Reports & Analytics</div>
+                                            <div class="chapter-title">Restaurant Dashboard</div>
                                         </div>
                                     </div>
                                 </div>
@@ -2052,78 +2017,42 @@
                         </div>
                     </div>
 
-                    <!-- Database Structure -->
-                    <div class="database-structure">
-                        <h3>Database Structure</h3>
-                        <p>The system uses a normalized database structure with optimized relationships for performance.</p>
+                    <!-- Database Schema -->
+                    <div class="api-endpoints">
+                        <h3>Database Schema (MongoDB)</h3>
+                        <p>The system uses MongoDB with Mongoose ODM for flexible data modeling. Key collections include:</p>
                         
-                        <div class="tables-grid">
-                            <div class="table-card">
-                                <div class="table-header">
-                                    <div class="table-icon">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <h5>Users Table</h5>
+                        <div class="endpoints-grid">
+                            <div class="endpoint-card">
+                                <div class="endpoint-method method-get" style="background: #28a745;">User</div>
+                                <div class="endpoint-path">Collection</div>
+                                <div class="endpoint-description">
+                                    { _id, name, email, password, role, address, phone, createdAt }
                                 </div>
-                                <ul class="table-fields">
-                                    <li>id (PK)</li>
-                                    <li>name</li>
-                                    <li>email</li>
-                                    <li>role_id</li>
-                                    <li>department_id</li>
-                                    <li>created_at</li>
-                                </ul>
                             </div>
                             
-                            <div class="table-card">
-                                <div class="table-header">
-                                    <div class="table-icon">
-                                        <i class="fas fa-briefcase"></i>
-                                    </div>
-                                    <h5>Projects Table</h5>
+                            <div class="endpoint-card">
+                                <div class="endpoint-method method-post" style="background: #ff6b6b;">Restaurant</div>
+                                <div class="endpoint-path">Collection</div>
+                                <div class="endpoint-description">
+                                    { _id, ownerId, name, description, cuisine, address, rating, menuItems[] }
                                 </div>
-                                <ul class="table-fields">
-                                    <li>id (PK)</li>
-                                    <li>name</li>
-                                    <li>description</li>
-                                    <li>manager_id</li>
-                                    <li>status</li>
-                                    <li>deadline</li>
-                                </ul>
                             </div>
                             
-                            <div class="table-card">
-                                <div class="table-header">
-                                    <div class="table-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <h5>Tasks Table</h5>
+                            <div class="endpoint-card">
+                                <div class="endpoint-method method-put" style="background: #ffc107;">Order</div>
+                                <div class="endpoint-path">Collection</div>
+                                <div class="endpoint-description">
+                                    { _id, userId, restaurantId, items[], total, status, paymentStatus, trackingId }
                                 </div>
-                                <ul class="table-fields">
-                                    <li>id (PK)</li>
-                                    <li>title</li>
-                                    <li>project_id</li>
-                                    <li>assigned_to</li>
-                                    <li>priority</li>
-                                    <li>status</li>
-                                </ul>
                             </div>
                             
-                            <div class="table-card">
-                                <div class="table-header">
-                                    <div class="table-icon">
-                                        <i class="fas fa-calendar"></i>
-                                    </div>
-                                    <h5>Attendance Table</h5>
+                            <div class="endpoint-card">
+                                <div class="endpoint-method method-delete" style="background: #dc3545;">Review</div>
+                                <div class="endpoint-path">Collection</div>
+                                <div class="endpoint-description">
+                                    { _id, userId, restaurantId, rating, comment, images[], createdAt }
                                 </div>
-                                <ul class="table-fields">
-                                    <li>id (PK)</li>
-                                    <li>user_id</li>
-                                    <li>check_in</li>
-                                    <li>check_out</li>
-                                    <li>date</li>
-                                    <li>status</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -2131,31 +2060,43 @@
                     <!-- API Endpoints -->
                     <div class="api-endpoints">
                         <h3>REST API Endpoints</h3>
-                        <p>The system provides RESTful API endpoints for integration with mobile applications.</p>
+                        <p>The application provides comprehensive RESTful APIs with TypeScript type definitions.</p>
                         
                         <div class="endpoints-grid">
                             <div class="endpoint-card">
-                                <span class="endpoint-method method-get">GET</span>
-                                <span class="endpoint-path">/api/employees</span>
-                                <div class="endpoint-description">Retrieve all employees with pagination</div>
+                                <span class="endpoint-method method-post">POST</span>
+                                <span class="endpoint-path">/api/auth/register</span>
+                                <div class="endpoint-description">User registration with email verification</div>
                             </div>
                             
                             <div class="endpoint-card">
                                 <span class="endpoint-method method-post">POST</span>
-                                <span class="endpoint-path">/api/projects</span>
-                                <div class="endpoint-description">Create a new project</div>
-                            </div>
-                            
-                            <div class="endpoint-card">
-                                <span class="endpoint-method method-put">PUT</span>
-                                <span class="endpoint-path">/api/tasks/{id}</span>
-                                <div class="endpoint-description">Update task status</div>
+                                <span class="endpoint-path">/api/auth/login</span>
+                                <div class="endpoint-description">JWT authentication and token generation</div>
                             </div>
                             
                             <div class="endpoint-card">
                                 <span class="endpoint-method method-get">GET</span>
-                                <span class="endpoint-path">/api/reports/performance</span>
-                                <div class="endpoint-description">Generate performance reports</div>
+                                <span class="endpoint-path">/api/restaurants</span>
+                                <div class="endpoint-description">Fetch all restaurants with filters and pagination</div>
+                            </div>
+                            
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-post">POST</span>
+                                <span class="endpoint-path">/api/orders</span>
+                                <div class="endpoint-description">Create new order with payment processing</div>
+                            </div>
+                            
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-get">GET</span>
+                                <span class="endpoint-path">/api/orders/track/:id</span>
+                                <div class="endpoint-description">Real-time order status via WebSocket</div>
+                            </div>
+                            
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-put">PUT</span>
+                                <span class="endpoint-path">/api/orders/:id/status</span>
+                                <div class="endpoint-description">Update order status (restaurant/admin)</div>
                             </div>
                         </div>
                     </div>
@@ -2170,7 +2111,11 @@
                             </a>
                             <a href="#" class="project-link-btn" target="_blank">
                                 <i class="fab fa-github"></i>
-                                <span>Source Code</span>
+                                <span>Frontend Code</span>
+                            </a>
+                            <a href="#" class="project-link-btn" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>Backend Code</span>
                             </a>
                             <a href="#" class="project-link-btn">
                                 <i class="fas fa-file-pdf"></i>
@@ -2181,7 +2126,7 @@
 
                     <!-- Navigation Buttons -->
                     <div class="project-navigation">
-                        <a href="project3.html" class="nav-btn prev">
+                        <a href="project5.html" class="nav-btn prev">
                             <i class="fas fa-arrow-left"></i>
                             <span>Previous Project</span>
                         </a>
@@ -2189,7 +2134,7 @@
                             <i class="fas fa-list"></i>
                             <span>All Projects</span>
                         </a>
-                        <a href="project5.html" class="nav-btn">
+                        <a href="project1.html" class="nav-btn">
                             <span>Next Project</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -2221,12 +2166,12 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Follow Me</h3>
-                     <div class="footer-social">
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/share/1AQt7hDaoz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/amashi.migara?igsh=cnY0em1tZHZiaTZj" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/migara-amashi-6ab1923a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://yourwebsite.com" target="_blank"> <i class="fas fa-globe"></i></a>
+                        <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
 
@@ -2255,7 +2200,7 @@
             </div>
 
             <div class="copyright">
-                <p>&copy; 2024 Migara Amashi. All Rights Reserved.</p>
+                <p>&copy; 2025 Migara Amashi. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -2326,7 +2271,7 @@
 
         let isDragging = false;
 
-        // Format time
+        // Format time (seconds to MM:SS)
         function formatTime(seconds) {
             if (isNaN(seconds)) return '0:00';
             const mins = Math.floor(seconds / 60);
@@ -2334,7 +2279,7 @@
             return `${mins}:${secs.toString().padStart(2, '0')}`;
         }
 
-        // Update progress
+        // Update progress bar
         function updateProgress() {
             if (!isDragging && video.duration) {
                 const percent = (video.currentTime / video.duration) * 100;
@@ -2343,11 +2288,12 @@
             }
         }
 
-        // Set duration when loaded
+        // Set duration when metadata loaded
         video.addEventListener('loadedmetadata', () => {
             durationSpan.textContent = formatTime(video.duration);
         });
 
+        // Update progress during playback
         video.addEventListener('timeupdate', updateProgress);
 
         // Toggle play/pause
@@ -2439,6 +2385,7 @@
             }
             video.scrollIntoView({ behavior: 'smooth', block: 'center' });
             
+            // Highlight clicked chapter
             const chapters = document.querySelectorAll('.chapter-item');
             chapters.forEach(ch => ch.style.background = 'rgba(52, 152, 219, 0.1)');
             if (event && event.currentTarget) {
@@ -2528,9 +2475,10 @@
 
         // Lightbox functionality
         const galleryImages = [
-            'images/company/co.jpeg',
-            'images/company/co1.jpeg',
-            'images/company/co2.jpeg'
+            'images/food/food_dashboard.jpeg',
+            'images/food/food_menu.jpeg',
+            'images/food/food_cart.jpeg',
+            'images/food/food_tracking.jpeg'
         ];
         
         let currentImageIndex = 0;

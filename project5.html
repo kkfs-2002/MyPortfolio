@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Portfolio | Company Management System</title>
+    <title>Portfolio | Bubble Tea Shop Website</title>
     <style>
         * {
             margin: 0;
@@ -603,8 +603,9 @@
             z-index: 2;
         }
 
-        .video-overlay:hover {
-            background: rgba(0, 0, 0, 0.7);
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .play-btn {
@@ -800,88 +801,6 @@
             color: #ffffff;
             font-size: 13px;
             font-weight: 500;
-        }
-
-        /* Database Structure */
-        .database-structure {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 40px;
-        }
-
-        .database-structure h3 {
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .database-structure p {
-            color: #e0e0e0;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .tables-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .table-card {
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 10px;
-            padding: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .table-card:hover {
-            background: rgba(52, 152, 219, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .table-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(52, 152, 219, 0.3);
-        }
-
-        .table-icon {
-            width: 32px;
-            height: 32px;
-            background: rgba(52, 152, 219, 0.2);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #3498db;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-
-        .table-header h5 {
-            color: #ffffff;
-            font-size: 15px;
-        }
-
-        .table-fields {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .table-fields li {
-            color: #e0e0e0;
-            font-size: 12px;
-            margin-bottom: 5px;
-            padding: 4px 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            font-family: monospace;
-            word-break: break-word;
         }
 
         /* API Endpoints */
@@ -1360,10 +1279,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .tables-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .endpoints-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1437,10 +1352,6 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-            }
-            
-            .tables-grid {
-                grid-template-columns: repeat(4, 1fr);
             }
             
             .endpoints-grid {
@@ -1568,7 +1479,6 @@
                 font-size: 16px;
             }
             
-            .database-structure,
             .api-endpoints {
                 padding: 20px 15px;
             }
@@ -1725,6 +1635,8 @@
                     <li><a href="project2.html">Project 02</a></li>
                     <li><a href="project3.html">Project 03</a></li>
                     <li><a href="project4.html">Project 04</a></li>
+                    <li><a href="project5.html">Project 05</a></li>
+                    <li><a href="project6.html">Project 06</a></li>
                 </ul>
             </li>
             <li><a href="work-experience.html">Experience</a></li>
@@ -1745,402 +1657,403 @@
         </ul>
     </div>
 
-<!-- Hero Section -->
-<section class="page-header">
-    <div class="content">
-        <span class="project-tag">Food & Beverage Website</span>
-        <h1>Bubble Tea Shop Website</h1>
-        <p>
-            <a href="index.html">Home</a> >
-            <a href="projects.html">Projects</a> >
-            Project 05
-        </p>
-    </div>
-</section>
-<!-- Project Details Section -->
-<section class="project-details">
-    <div class="container">
-        <div class="project-container">
+    <!-- Hero Section -->
+    <section class="page-header">
+        <div class="content">
+            <span class="project-tag">Food & Beverage Website</span>
+            <h1>Bubble Tea Shop Website</h1>
+            <p>
+                <a href="index.html">Home</a> >
+                <a href="projects.html">Projects</a> >
+                Project 05
+            </p>
+        </div>
+    </section>
 
-            <!-- Project Overview -->
-            <div class="project-overview">
-                <div class="project-header">
-                    <div class="project-title">
-                        <h2>Project Overview</h2>
+    <!-- Project Details Section -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-container">
+
+                <!-- Project Overview -->
+                <div class="project-overview">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h2>Project Overview</h2>
+                            <p>
+                                A modern and responsive Bubble Tea Shop website designed to showcase
+                                products, highlight the brand story, and engage customers through
+                                visuals and interactive content.
+                            </p>
+                        </div>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Category</span>
+                                <span class="meta-value">Food & Beverage Website</span>
+                            </div>
+
+                            <div class="meta-item">
+                                <span class="meta-label">Year</span>
+                                <span class="meta-value">2024</span>
+                            </div>
+
+                            <div class="meta-item">
+                                <span class="meta-label">Status</span>
+                                <span class="meta-value">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Description -->
+                    <div class="project-description">
+                        <div class="description-content">
+                            <div class="main-description">
+                                <h3>About This Project</h3>
+
+                                <p>
+                                    This project is a modern and visually engaging Bubble Tea Shop Website
+                                    developed to showcase products, highlight the brand identity, and
+                                    provide customers with an interactive browsing experience.
+                                </p>
+
+                                <p>
+                                    The website features a dynamic menu display, video gallery,
+                                    promotional sections, and responsive layouts optimized for
+                                    desktops, tablets, and mobile devices. Smooth animations and
+                                    clean UI elements enhance user engagement and brand appeal.
+                                </p>
+
+                                <h4>Project Objectives:</h4>
+                                <ul>
+                                    <li>Create a visually appealing bubble tea brand website</li>
+                                    <li>Showcase signature drinks and menu categories</li>
+                                    <li>Include video content to highlight preparation process</li>
+                                    <li>Ensure full responsiveness across all devices</li>
+                                    <li>Improve customer engagement through modern UI/UX</li>
+                                    <li>Provide a scalable frontend structure for future expansion</li>
+                                </ul>
+
+                                <p>
+                                    The project follows modern frontend development practices with
+                                    optimized assets, reusable components, and clean code structure.
+                                    It is suitable for real-world deployment and future feature
+                                    integration such as online ordering or customer feedback.
+                                </p>
+                            </div>
+
+                            <!-- Tech Stack -->
+                            <div class="tech-stack">
+                                <h3>Technologies Used</h3>
+
+                                <div class="tech-list">
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fab fa-html5"></i>
+                                        </div>
+                                        <span class="tech-name">HTML5</span>
+                                    </div>
+
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fab fa-css3-alt"></i>
+                                        </div>
+                                        <span class="tech-name">CSS3</span>
+                                    </div>
+
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fab fa-js"></i>
+                                        </div>
+                                        <span class="tech-name">JavaScript</span>
+                                    </div>
+
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fab fa-bootstrap"></i>
+                                        </div>
+                                        <span class="tech-name">Bootstrap 5</span>
+                                    </div>
+
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <span class="tech-name">Responsive Design</span>
+                                    </div>
+
+                                    <div class="tech-item">
+                                        <div class="tech-icon">
+                                            <i class="fas fa-video"></i>
+                                        </div>
+                                        <span class="tech-name">Video Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Website Features / Modules -->
+                    <div class="system-modules">
+                        <h3>Website Features</h3>
+
+                        <div class="modules-grid">
+
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <i class="fas fa-mug-hot"></i>
+                                </div>
+                                <h4>Menu Showcase</h4>
+                                <ul class="module-features">
+                                    <li>Signature milk tea display</li>
+                                    <li>Category-based menu sections</li>
+                                    <li>High-quality product images</li>
+                                    <li>Pricing & descriptions</li>
+                                    <li>Featured drinks highlight</li>
+                                </ul>
+                            </div>
+
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h4>Video Gallery</h4>
+                                <ul class="module-features">
+                                    <li>Milk tea preparation videos</li>
+                                    <li>Behind-the-scenes content</li>
+                                    <li>MP4 video integration</li>
+                                    <li>Smooth playback experience</li>
+                                    <li>Modern visual presentation</li>
+                                </ul>
+                            </div>
+
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4>Responsive Design</h4>
+                                <ul class="module-features">
+                                    <li>Mobile-first layout</li>
+                                    <li>Tablet & desktop optimization</li>
+                                    <li>Flexible grid system</li>
+                                    <li>Cross-browser compatibility</li>
+                                    <li>Fast loading performance</li>
+                                </ul>
+                            </div>
+
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h4>Branding & UI</h4>
+                                <ul class="module-features">
+                                    <li>Modern dark theme design</li>
+                                    <li>Smooth animations</li>
+                                    <li>Clean typography</li>
+                                    <li>Consistent brand colors</li>
+                                    <li>User-friendly navigation</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Project Gallery -->
+                    <div class="project-gallery">
+                        <div class="gallery-header">
+                            <h3>Website Screenshots</h3>
+                            <span class="gallery-count">3 Images</span>
+                        </div>
+
+                        <div class="gallery-grid">
+                            <div class="gallery-item large" onclick="openLightbox('images/bubble/bubble.jpeg')">
+                                <img src="images/bubble/bubble.jpeg" alt="Bubble Tea Homepage">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item" onclick="openLightbox('images/bubble/bubble1.jpeg')">
+                                <img src="images/bubble/bubble1.jpeg" alt="Bubble Tea Menu Page">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item" onclick="openLightbox('images/bubble/bubble2.jpeg')">
+                                <img src="images/bubble/bubble2.jpeg" alt="Bubble Tea Video Section">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Video - UPDATED WITH CLOUDINARY URL -->
+                    <div class="project-video">
+                        <div class="video-section-header">
+                            <h3><i class="fas fa-play-circle"></i> Bubble Tea Preparation Video</h3>
+
+                            <div class="video-stats-badge">
+                                <div class="stat-badge">
+                                    <i class="fas fa-hd"></i>
+                                    <span>1080p HD</span>
+                                </div>
+                                <div class="stat-badge">
+                                    <i class="fas fa-clock"></i>
+                                    <span>0:30</span>
+                                </div>
+                                <div class="stat-badge">
+                                    <i class="fas fa-music"></i>
+                                    <span>No Voice</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-player-container">
+                            <div class="video-player">
+                                <!-- ✅ UPDATED: Cloudinary Direct Video URL with autoplay loop muted playsinline -->
+                                <video id="projectVideo" poster="images/bubble/bubble.jpeg" autoplay loop muted playsinline>
+                                    <source src="https://res.cloudinary.com/dtz3ahxbf/video/upload/Recording_2026-03-25_124515_wszwbl.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay" id="videoOverlay">
+                                    <div class="play-btn" id="playBtn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <div class="video-controls">
+                                <button class="play-pause-btn" id="playPauseBtn">
+                                    <i class="fas fa-play" id="playIcon"></i>
+                                </button>
+
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="progressBar">
+                                        <div class="progress" id="progress"></div>
+                                    </div>
+                                    <span class="time-display">
+                                        <span id="currentTime">0:00</span> / <span id="duration">0:30</span>
+                                    </span>
+                                </div>
+
+                                <div class="volume-control">
+                                    <button class="volume-btn" id="volumeBtn">
+                                        <i class="fas fa-volume-up" id="volumeIcon"></i>
+                                    </button>
+                                    <div class="volume-slider" id="volumeSlider">
+                                        <div class="volume-level" id="volumeLevel"></div>
+                                    </div>
+                                </div>
+
+                                <button class="fullscreen-btn" id="fullscreenBtn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+
+                            <!-- Video Info -->
+                            <div class="video-info">
+                                <div class="video-description">
+                                    This video showcases how our signature milk tea is prepared,
+                                    highlighting fresh ingredients, brewing techniques, and
+                                    attention to detail that define our bubble tea brand.
+                                </div>
+
+                                <!-- Video Chapters -->
+                                <div class="video-chapters">
+                                    <div class="chapters-header">
+                                        <i class="fas fa-list-ol"></i>
+                                        <h4>Video Chapters</h4>
+                                    </div>
+
+                                    <div class="chapters-grid">
+                                        <div class="chapter-item" onclick="seekToChapter(0)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 0:00
+                                            </div>
+                                            <div class="chapter-title">Introduction</div>
+                                        </div>
+
+                                        <div class="chapter-item" onclick="seekToChapter(5)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 0:05
+                                            </div>
+                                            <div class="chapter-title">Tea Brewing</div>
+                                        </div>
+
+                                        <div class="chapter-item" onclick="seekToChapter(12)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 0:12
+                                            </div>
+                                            <div class="chapter-title">Milk & Flavor Mixing</div>
+                                        </div>
+
+                                        <div class="chapter-item" onclick="seekToChapter(20)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 0:20
+                                            </div>
+                                            <div class="chapter-title">Toppings & Shaking</div>
+                                        </div>
+
+                                        <div class="chapter-item" onclick="seekToChapter(26)">
+                                            <div class="chapter-time">
+                                                <i class="far fa-clock"></i> 0:26
+                                            </div>
+                                            <div class="chapter-title">Final Serve</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API / Data Endpoints -->
+                    <div class="api-endpoints">
+                        <h3>Website Data Endpoints</h3>
                         <p>
-                            A modern and responsive Bubble Tea Shop website designed to showcase
-                            products, highlight the brand story, and engage customers through
-                            visuals and interactive content.
+                            The website structure supports scalable data endpoints that can be
+                            used for future features such as online ordering, mobile apps,
+                            and admin dashboards.
                         </p>
-                    </div>
 
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Category</span>
-                            <span class="meta-value">Food & Beverage Website</span>
+                        <div class="endpoints-grid">
+
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-get">GET</span>
+                                <span class="endpoint-path">/api/menu</span>
+                                <div class="endpoint-description">
+                                    Retrieve all bubble tea menu items and categories
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-get">GET</span>
+                                <span class="endpoint-path">/api/menu/{id}</span>
+                                <div class="endpoint-description">
+                                    Retrieve details of a specific drink
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-post">POST</span>
+                                <span class="endpoint-path">/api/orders</span>
+                                <div class="endpoint-description">
+                                    Place a new bubble tea order (future enhancement)
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <span class="endpoint-method method-get">GET</span>
+                                <span class="endpoint-path">/api/videos</span>
+                                <div class="endpoint-description">
+                                    Fetch preparation and promotional videos
+                                </div>
+                            </div>
+
                         </div>
-
-                        <div class="meta-item">
-                            <span class="meta-label">Year</span>
-                            <span class="meta-value">2024</span>
-                        </div>
-
-                        <div class="meta-item">
-                            <span class="meta-label">Status</span>
-                            <span class="meta-value">Completed</span>
-                        </div>
                     </div>
-                </div>
-<!-- Project Description -->
-<div class="project-description">
-    <div class="description-content">
-        <div class="main-description">
-            <h3>About This Project</h3>
-
-            <p>
-                This project is a modern and visually engaging Bubble Tea Shop Website
-                developed to showcase products, highlight the brand identity, and
-                provide customers with an interactive browsing experience.
-            </p>
-
-            <p>
-                The website features a dynamic menu display, video gallery,
-                promotional sections, and responsive layouts optimized for
-                desktops, tablets, and mobile devices. Smooth animations and
-                clean UI elements enhance user engagement and brand appeal.
-            </p>
-
-            <h4>Project Objectives:</h4>
-            <ul>
-                <li>Create a visually appealing bubble tea brand website</li>
-                <li>Showcase signature drinks and menu categories</li>
-                <li>Include video content to highlight preparation process</li>
-                <li>Ensure full responsiveness across all devices</li>
-                <li>Improve customer engagement through modern UI/UX</li>
-                <li>Provide a scalable frontend structure for future expansion</li>
-            </ul>
-
-            <p>
-                The project follows modern frontend development practices with
-                optimized assets, reusable components, and clean code structure.
-                It is suitable for real-world deployment and future feature
-                integration such as online ordering or customer feedback.
-            </p>
-        </div>
-
-        <!-- Tech Stack -->
-        <div class="tech-stack">
-            <h3>Technologies Used</h3>
-
-            <div class="tech-list">
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <span class="tech-name">HTML5</span>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <span class="tech-name">CSS3</span>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <i class="fab fa-js"></i>
-                    </div>
-                    <span class="tech-name">JavaScript</span>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <i class="fab fa-bootstrap"></i>
-                    </div>
-                    <span class="tech-name">Bootstrap 5</span>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <span class="tech-name">Responsive Design</span>
-                </div>
-
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <span class="tech-name">Video Integration</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Website Features / Modules -->
-<div class="system-modules">
-    <h3>Website Features</h3>
-
-    <div class="modules-grid">
-
-        <div class="module-card">
-            <div class="module-icon">
-                <i class="fas fa-mug-hot"></i>
-            </div>
-            <h4>Menu Showcase</h4>
-            <ul class="module-features">
-                <li>Signature milk tea display</li>
-                <li>Category-based menu sections</li>
-                <li>High-quality product images</li>
-                <li>Pricing & descriptions</li>
-                <li>Featured drinks highlight</li>
-            </ul>
-        </div>
-
-        <div class="module-card">
-            <div class="module-icon">
-                <i class="fas fa-video"></i>
-            </div>
-            <h4>Video Gallery</h4>
-            <ul class="module-features">
-                <li>Milk tea preparation videos</li>
-                <li>Behind-the-scenes content</li>
-                <li>MP4 video integration</li>
-                <li>Smooth playback experience</li>
-                <li>Modern visual presentation</li>
-            </ul>
-        </div>
-
-        <div class="module-card">
-            <div class="module-icon">
-                <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h4>Responsive Design</h4>
-            <ul class="module-features">
-                <li>Mobile-first layout</li>
-                <li>Tablet & desktop optimization</li>
-                <li>Flexible grid system</li>
-                <li>Cross-browser compatibility</li>
-                <li>Fast loading performance</li>
-            </ul>
-        </div>
-
-        <div class="module-card">
-            <div class="module-icon">
-                <i class="fas fa-palette"></i>
-            </div>
-            <h4>Branding & UI</h4>
-            <ul class="module-features">
-                <li>Modern dark theme design</li>
-                <li>Smooth animations</li>
-                <li>Clean typography</li>
-                <li>Consistent brand colors</li>
-                <li>User-friendly navigation</li>
-            </ul>
-        </div>
-
-    </div>
-</div>
-
-<!-- Project Gallery -->
-<div class="project-gallery">
-    <div class="gallery-header">
-        <h3>Website Screenshots</h3>
-        <span class="gallery-count">3 Images</span>
-    </div>
-
-    <div class="gallery-grid">
-        <div class="gallery-item large" onclick="openLightbox('images/bubble/bubble.jpeg')">
-            <img src="images/bubble/bubble.jpeg" alt="Bubble Tea Homepage">
-            <div class="gallery-overlay">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/bubble/bubble1.jpeg')">
-            <img src="images/bubble/bubble1.jpeg" alt="Bubble Tea Menu Page">
-            <div class="gallery-overlay">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/bubble/bubble2.jpeg')">
-            <img src="images/bubble/bubble2.jpeg" alt="Bubble Tea Video Section">
-            <div class="gallery-overlay">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                    <!-- Project Video -->
-<div class="project-video">
-    <div class="video-section-header">
-        <h3><i class="fas fa-play-circle"></i> Bubble Tea Preparation Video</h3>
-
-        <div class="video-stats-badge">
-            <div class="stat-badge">
-                <i class="fas fa-hd"></i>
-                <span>1080p HD</span>
-            </div>
-            <div class="stat-badge">
-                <i class="fas fa-clock"></i>
-                <span>0:30</span>
-            </div>
-            <div class="stat-badge">
-                <i class="fas fa-music"></i>
-                <span>No Voice</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="video-player-container">
-      <div class="video-player">
-    <video id="projectVideo" controls poster="images/bubble/bubble.jpeg">
-        <source src="https://drive.google.com/uc?export=download&id=1_n9fD1lwMvPKDKsFyozqL53JnAPzbSvR" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-
-            <div class="video-overlay" onclick="playVideo()">
-                <div class="play-btn">
-                    <i class="fas fa-play"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <div class="video-controls">
-            <button class="play-pause-btn" onclick="togglePlay()">
-                <i class="fas fa-play" id="playIcon"></i>
-            </button>
-
-            <div class="progress-container">
-                <div class="progress-bar" onclick="seekVideo(event)">
-                    <div class="progress" id="progress"></div>
-                </div>
-                <span class="time-display">
-                    <span id="currentTime">0:00</span> / <span id="duration">0:30</span>
-                </span>
-            </div>
-
-            <div class="volume-control">
-                <button class="volume-btn" onclick="toggleMute()">
-                    <i class="fas fa-volume-up" id="volumeIcon"></i>
-                </button>
-                <div class="volume-slider" onclick="changeVolume(event)">
-                    <div class="volume-level" id="volumeLevel"></div>
-                </div>
-            </div>
-
-            <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                <i class="fas fa-expand"></i>
-            </button>
-        </div>
-
-        <!-- Video Info -->
-        <div class="video-info">
-            <div class="video-description">
-                This video showcases how our signature milk tea is prepared,
-                highlighting fresh ingredients, brewing techniques, and
-                attention to detail that define our bubble tea brand.
-            </div>
-
-            <!-- Video Chapters -->
-            <div class="video-chapters">
-                <div class="chapters-header">
-                    <i class="fas fa-list-ol"></i>
-                    <h4>Video Chapters</h4>
-                </div>
-
-                <div class="chapters-grid">
-                    <div class="chapter-item" onclick="seekToChapter(0)">
-                        <div class="chapter-time">
-                            <i class="far fa-clock"></i> 0:00
-                        </div>
-                        <div class="chapter-title">Introduction</div>
-                    </div>
-
-                    <div class="chapter-item" onclick="seekToChapter(5)">
-                        <div class="chapter-time">
-                            <i class="far fa-clock"></i> 0:05
-                        </div>
-                        <div class="chapter-title">Tea Brewing</div>
-                    </div>
-
-                    <div class="chapter-item" onclick="seekToChapter(12)">
-                        <div class="chapter-time">
-                            <i class="far fa-clock"></i> 0:12
-                        </div>
-                        <div class="chapter-title">Milk & Flavor Mixing</div>
-                    </div>
-
-                    <div class="chapter-item" onclick="seekToChapter(20)">
-                        <div class="chapter-time">
-                            <i class="far fa-clock"></i> 0:20
-                        </div>
-                        <div class="chapter-title">Toppings & Shaking</div>
-                    </div>
-
-                    <div class="chapter-item" onclick="seekToChapter(26)">
-                        <div class="chapter-time">
-                            <i class="far fa-clock"></i> 0:26
-                        </div>
-                        <div class="chapter-title">Final Serve</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- API / Data Endpoints -->
-<div class="api-endpoints">
-    <h3>Website Data Endpoints</h3>
-    <p>
-        The website structure supports scalable data endpoints that can be
-        used for future features such as online ordering, mobile apps,
-        and admin dashboards.
-    </p>
-
-    <div class="endpoints-grid">
-
-        <div class="endpoint-card">
-            <span class="endpoint-method method-get">GET</span>
-            <span class="endpoint-path">/api/menu</span>
-            <div class="endpoint-description">
-                Retrieve all bubble tea menu items and categories
-            </div>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method method-get">GET</span>
-            <span class="endpoint-path">/api/menu/{id}</span>
-            <div class="endpoint-description">
-                Retrieve details of a specific drink
-            </div>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method method-post">POST</span>
-            <span class="endpoint-path">/api/orders</span>
-            <div class="endpoint-description">
-                Place a new bubble tea order (future enhancement)
-            </div>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method method-get">GET</span>
-            <span class="endpoint-path">/api/videos</span>
-            <div class="endpoint-description">
-                Fetch preparation and promotional videos
-            </div>
-        </div>
-
-    </div>
-</div>
-
 
                     <!-- Navigation Buttons -->
                     <div class="project-navigation">
@@ -2184,30 +2097,28 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Follow Me</h3>
-                     <div class="footer-social">
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/share/1AQt7hDaoz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/amashi.migara?igsh=cnY0em1tZHZiaTZj" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/migara-amashi-6ab1923a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://yourwebsite.com" target="_blank"> <i class="fas fa-globe"></i></a>
-
                     </div>
                 </div>
 
-            <div class="footer-column">
-    <h3>Quick Links</h3>
-    <ul class="footer-links two-column">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="project.html">Project</a></li>
-        <li><a href="work-experience.html">Experience</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="Certifications.html">Certifications</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</div>
-
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links two-column">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="project.html">Project</a></li>
+                        <li><a href="work-experience.html">Experience</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="Certifications.html">Certifications</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
@@ -2275,223 +2186,267 @@
             }
         });
 
-        // Video Player Elements
+        // ========== VIDEO PLAYER FUNCTIONALITY ==========
         const video = document.getElementById('projectVideo');
-        const videoOverlay = document.querySelector('.video-overlay');
+        const videoOverlay = document.getElementById('videoOverlay');
+        const playPauseBtn = document.getElementById('playPauseBtn');
         const playIcon = document.getElementById('playIcon');
         const progress = document.getElementById('progress');
-        const currentTimeEl = document.getElementById('currentTime');
-        const durationEl = document.getElementById('duration');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeSpan = document.getElementById('currentTime');
+        const durationSpan = document.getElementById('duration');
+        const volumeBtn = document.getElementById('volumeBtn');
         const volumeIcon = document.getElementById('volumeIcon');
         const volumeLevel = document.getElementById('volumeLevel');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
 
-        // Format time in MM:SS
+        let isDragging = false;
+
+        // Format time (seconds to MM:SS)
         function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
         }
-
-        // Initialize video
-        video.addEventListener('loadedmetadata', function() {
-            durationEl.textContent = formatTime(video.duration);
-            video.volume = 0.8; // Set default volume
-            updateVolumeUI();
-        });
 
         // Update progress bar
-        video.addEventListener('timeupdate', function() {
-            const progressPercent = (video.currentTime / video.duration) * 100;
-            progress.style.width = `${progressPercent}%`;
-            currentTimeEl.textContent = formatTime(video.currentTime);
+        function updateProgress() {
+            if (!isDragging && video.duration) {
+                const percent = (video.currentTime / video.duration) * 100;
+                progress.style.width = `${percent}%`;
+                currentTimeSpan.textContent = formatTime(video.currentTime);
+            }
+        }
+
+        // Set duration when metadata loaded
+        video.addEventListener('loadedmetadata', () => {
+            durationSpan.textContent = formatTime(video.duration);
         });
 
-        // Play video from overlay
-        function playVideo() {
-            video.play();
-            videoOverlay.style.display = 'none';
-            playIcon.classList.remove('fa-play');
-            playIcon.classList.add('fa-pause');
-        }
+        // Update progress during playback
+        video.addEventListener('timeupdate', updateProgress);
 
         // Toggle play/pause
         function togglePlay() {
             if (video.paused) {
                 video.play();
-                videoOverlay.style.display = 'none';
-                playIcon.classList.remove('fa-play');
-                playIcon.classList.add('fa-pause');
+                playIcon.className = 'fas fa-pause';
+                videoOverlay.classList.add('hidden');
             } else {
                 video.pause();
-                playIcon.classList.remove('fa-pause');
-                playIcon.classList.add('fa-play');
+                playIcon.className = 'fas fa-play';
+                videoOverlay.classList.remove('hidden');
             }
         }
 
         // Seek video
         function seekVideo(event) {
-            const progressBar = event.currentTarget;
-            const clickPosition = event.offsetX;
-            const progressBarWidth = progressBar.offsetWidth;
-            const seekTime = (clickPosition / progressBarWidth) * video.duration;
-            
-            video.currentTime = seekTime;
+            const rect = progressBar.getBoundingClientRect();
+            const pos = (event.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+            updateProgress();
         }
 
-        // Toggle mute
-        function toggleMute() {
-            video.muted = !video.muted;
-            updateVolumeUI();
+        // Volume control
+        function updateVolumeUI() {
+            const volume = video.volume;
+            const percent = volume * 100;
+            volumeLevel.style.width = `${percent}%`;
+            
+            if (volume === 0 || video.muted) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (volume < 0.5) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
         }
 
-        // Change volume
-        function changeVolume(event) {
-            const volumeSlider = event.currentTarget;
-            const clickPosition = event.offsetX;
-            const sliderWidth = volumeSlider.offsetWidth;
-            const volume = clickPosition / sliderWidth;
-            
-            video.volume = Math.max(0, Math.min(1, volume));
+        function setVolume(volume) {
+            volume = Math.max(0, Math.min(1, volume));
+            video.volume = volume;
             video.muted = false;
             updateVolumeUI();
         }
 
-        // Update volume UI
-        function updateVolumeUI() {
-            const volume = video.volume;
-            const isMuted = video.muted;
-            const volumePercent = isMuted ? 0 : volume * 100;
-            
-            volumeLevel.style.width = `${volumePercent}%`;
-            
-            if (isMuted || volume === 0) {
-                volumeIcon.classList.remove('fa-volume-up', 'fa-volume-down');
-                volumeIcon.classList.add('fa-volume-mute');
-            } else if (volume < 0.5) {
-                volumeIcon.classList.remove('fa-volume-up', 'fa-volume-mute');
-                volumeIcon.classList.add('fa-volume-down');
-            } else {
-                volumeIcon.classList.remove('fa-volume-down', 'fa-volume-mute');
-                volumeIcon.classList.add('fa-volume-up');
-            }
+        function changeVolume(event) {
+            const rect = volumeSlider.getBoundingClientRect();
+            const volume = (event.clientX - rect.left) / rect.width;
+            setVolume(volume);
         }
 
-        // Toggle fullscreen
+        function toggleMute() {
+            if (video.muted || video.volume === 0) {
+                video.muted = false;
+                setVolume(0.8);
+            } else {
+                video.muted = true;
+            }
+            updateVolumeUI();
+        }
+
+        // Fullscreen
         function toggleFullscreen() {
             const container = document.querySelector('.video-player-container');
-            
             if (!document.fullscreenElement) {
-                if (container.requestFullscreen) {
-                    container.requestFullscreen();
-                } else if (container.webkitRequestFullscreen) {
-                    container.webkitRequestFullscreen();
-                } else if (container.msRequestFullscreen) {
-                    container.msRequestFullscreen();
-                }
+                container.requestFullscreen();
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
             } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
+                document.exitFullscreen();
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
             }
         }
 
-        // Video chapter navigation
-        function seekToChapter(seconds) {
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+            } else {
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+            }
+        });
+
+        // Chapter navigation
+        window.seekToChapter = function(seconds) {
             video.currentTime = seconds;
-            playVideo();
-        }
+            if (video.paused) {
+                video.play();
+                playIcon.className = 'fas fa-pause';
+                videoOverlay.classList.add('hidden');
+            }
+            video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Highlight clicked chapter
+            const chapters = document.querySelectorAll('.chapter-item');
+            chapters.forEach(ch => ch.style.background = 'rgba(52, 152, 219, 0.1)');
+            if (event && event.currentTarget) {
+                event.currentTarget.style.background = 'rgba(52, 152, 219, 0.3)';
+            }
+        };
+
+        // Event listeners
+        playPauseBtn.addEventListener('click', togglePlay);
+        videoOverlay.addEventListener('click', togglePlay);
+        progressBar.addEventListener('click', seekVideo);
+        volumeBtn.addEventListener('click', toggleMute);
+        volumeSlider.addEventListener('click', changeVolume);
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Progress bar dragging
+        progressBar.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            seekVideo(e);
+            
+            const handleMove = (moveEvent) => {
+                if (isDragging) seekVideo(moveEvent);
+            };
+            
+            const handleUp = () => {
+                isDragging = false;
+                document.removeEventListener('mousemove', handleMove);
+                document.removeEventListener('mouseup', handleUp);
+            };
+            
+            document.addEventListener('mousemove', handleMove);
+            document.addEventListener('mouseup', handleUp);
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            switch(e.code) {
+                case 'Space':
+                    e.preventDefault();
+                    togglePlay();
+                    break;
+                case 'KeyF':
+                    toggleFullscreen();
+                    break;
+                case 'KeyM':
+                    toggleMute();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    video.currentTime = Math.max(0, video.currentTime - 10);
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    video.currentTime = Math.min(video.duration, video.currentTime + 10);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    setVolume(Math.min(1, video.volume + 0.1));
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    setVolume(Math.max(0, video.volume - 0.1));
+                    break;
+            }
+        });
+
+        // Initialize
+        video.volume = 0.8;
+        updateVolumeUI();
+        
+        video.addEventListener('play', () => {
+            videoOverlay.classList.add('hidden');
+            playIcon.className = 'fas fa-pause';
+        });
+        
+        video.addEventListener('pause', () => {
+            videoOverlay.classList.remove('hidden');
+            playIcon.className = 'fas fa-play';
+        });
+        
+        video.addEventListener('ended', () => {
+            videoOverlay.classList.remove('hidden');
+            playIcon.className = 'fas fa-play';
+        });
 
         // Lightbox functionality
-        const images = [
-            'images/projects3.png',
-            'images/company-dashboard.jpg',
-            'images/employee-management.jpg',
-            'images/project-tracking.jpg'
+        const galleryImages = [
+            'images/bubble/bubble.jpeg',
+            'images/bubble/bubble1.jpeg',
+            'images/bubble/bubble2.jpeg'
         ];
         
         let currentImageIndex = 0;
 
-        function openLightbox(imageSrc) {
+        window.openLightbox = function(imageSrc) {
             const lightbox = document.getElementById('lightboxModal');
             const lightboxImage = document.getElementById('lightboxImage');
             
-            currentImageIndex = images.indexOf(imageSrc);
+            currentImageIndex = galleryImages.indexOf(imageSrc);
             if (currentImageIndex === -1) currentImageIndex = 0;
             
             lightboxImage.src = imageSrc;
             lightbox.style.display = 'block';
             document.body.style.overflow = 'hidden';
-        }
+        };
 
-        function closeLightbox() {
+        window.closeLightbox = function() {
             const lightbox = document.getElementById('lightboxModal');
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
+        };
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            document.getElementById('lightboxImage').src = images[currentImageIndex];
-        }
+        window.nextImage = function() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+        };
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            document.getElementById('lightboxImage').src = images[currentImageIndex];
-        }
+        window.prevImage = function() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+        };
 
-        // Close lightbox with ESC key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-            if (e.key === 'ArrowRight') {
-                nextImage();
-            }
-            if (e.key === 'ArrowLeft') {
-                prevImage();
-            }
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Video ended event
-        video.addEventListener('ended', function() {
-            videoOverlay.style.display = 'flex';
-            playIcon.classList.remove('fa-pause');
-            playIcon.classList.add('fa-play');
-        });
-
-        // Prevent scrolling when video is playing in fullscreen
-        document.addEventListener('fullscreenchange', function() {
-            if (document.fullscreenElement) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Touch-friendly interactions
-        document.addEventListener('touchstart', function() {}, {passive: true});
     </script>
 </body>
 </html>
