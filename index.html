@@ -178,11 +178,22 @@
             width: 100%;
         }
 
+        /* UPDATED: Menu button - matching about page style exactly */
         .menu-btn {
             display: none;
-            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
             cursor: pointer;
-            color: var(--dark-color);
+            z-index: 1001;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
 
@@ -1259,6 +1270,7 @@
                 margin: 15px 0;
             }
 
+            /* UPDATED: Menu button display and styling for mobile */
             .menu-btn {
                 display: block;
             }
@@ -2631,22 +2643,30 @@
     <script>
         // JavaScript for interactive features
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            // Mobile menu toggle - updated with better styling matching about page
             const menuBtn = document.querySelector('.menu-btn');
             const navLinks = document.querySelector('.nav-links');
             
             menuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
-                menuBtn.querySelector('i').classList.toggle('fa-bars');
-                menuBtn.querySelector('i').classList.toggle('fa-times');
+                // Toggle between bars and times icon
+                const icon = menuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
             
             // Close mobile menu when clicking on a link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
-                    menuBtn.querySelector('i').classList.add('fa-bars');
-                    menuBtn.querySelector('i').classList.remove('fa-times');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 });
             });
             
