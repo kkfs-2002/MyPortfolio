@@ -829,23 +829,18 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+     <!-- Header -->
     <header id="main-header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Portfolio<span>.</span></a>
-                
-                <!-- Hamburger Menu -->
-                <button class="menu-toggle" id="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <a href="index.html" class="logo">Portfolio<span>.</span></a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
                 </button>
-                
-                <ul class="nav-links" id="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li class="dropdown">
+                     <li class="dropdown">
                         <a href="project.html">Projects <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="project.html">Project</a></li>
@@ -859,7 +854,7 @@
                     </li>
                     <li><a href="work-experience.html">Experience</a></li>
                     <li><a href="education.html">Education</a></li>
-                    <li class="dropdown">
+                   <li class="dropdown" id="certificationsDropdown">
                         <a href="#">Certifications <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="Certifications.html">Certifications</a></li>
@@ -871,11 +866,9 @@
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                
-                <!-- Overlay for mobile -->
-                <div class="overlay" id="overlay"></div>
             </nav>
         </div>
+        <div class="overlay" id="overlay"></div>
     </header>
 
     <!-- Rest of your HTML content remains the same -->
@@ -1150,73 +1143,73 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
+         // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
         const overlay = document.getElementById('overlay');
-        const dropdowns = document.querySelectorAll('.dropdown');
+        const projectsDropdown = document.getElementById('projectsDropdown');
+        const certificationsDropdown = document.getElementById('certificationsDropdown');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             navLinks.classList.toggle('active');
             overlay.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            menuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
 
-        // Close menu when clicking overlay
-        overlay.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
+        overlay.addEventListener('click', function() {
             navLinks.classList.remove('active');
             overlay.classList.remove('active');
-            document.body.style.overflow = '';
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            projectsDropdown.classList.remove('active');
+            certificationsDropdown.classList.remove('active');
         });
 
         // Mobile dropdown handling
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            const menu = dropdown.querySelector('.dropdown-menu');
-
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992) {
+        function handleMobileDropdown() {
+            if (window.innerWidth <= 768) {
+                projectsDropdown.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    
-                    // Close other open dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.querySelector('.dropdown-menu').classList.remove('active');
-                        }
-                    });
-                    
-                    menu.classList.toggle('active');
-                }
-            });
-        });
+                    this.classList.toggle('active');
+                    if (this !== certificationsDropdown) {
+                        certificationsDropdown.classList.remove('active');
+                    }
+                });
 
-        // Close dropdowns when clicking outside on mobile
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
-                if (!e.target.closest('.dropdown')) {
-                    dropdowns.forEach(dropdown => {
-                        dropdown.querySelector('.dropdown-menu').classList.remove('active');
-                    });
-                }
+                certificationsDropdown.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    if (this !== projectsDropdown) {
+                        projectsDropdown.classList.remove('active');
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!projectsDropdown.contains(e.target)) {
+                        projectsDropdown.classList.remove('active');
+                    }
+                    if (!certificationsDropdown.contains(e.target)) {
+                        certificationsDropdown.classList.remove('active');
+                    }
+                });
             }
-        });
+        }
+
+        handleMobileDropdown();
 
         // Close mobile menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 992) {
-                    menuToggle.classList.remove('active');
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
                     navLinks.classList.remove('active');
                     overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                    
-                    // Close all dropdowns
-                    dropdowns.forEach(dropdown => {
-                        dropdown.querySelector('.dropdown-menu').classList.remove('active');
-                    });
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    projectsDropdown.classList.remove('active');
+                    certificationsDropdown.classList.remove('active');
                 }
             });
         });
