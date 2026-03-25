@@ -1191,22 +1191,52 @@
                         </div>
                     </div>
 
-                    <!-- Project Video -->
-                    <div class="project-video">
-                        <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 24px;">Project Walkthrough</h3>
-                        <div class="video-container">
-                            <video id="projectVideo" poster="images/propertyweb/pro1.jpeg">
-                                <source src="images/propertyweb/property.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="video-overlay" onclick="playVideo()">
-                                <div class="play-btn">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                 <!-- Project Video -->
+<div class="project-video">
+    <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 24px;">Project Walkthrough</h3>
+    <div class="video-container">
+        <video id="projectVideo" autoplay loop muted playsinline poster="images/propertyweb/pro1.jpeg">
+            <!-- ✅ Correct Cloudinary Direct Video URL -->
+            <source src="https://res.cloudinary.com/dtz3ahxbf/video/upload/project1_spcpq7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay" onclick="playVideo()">
+            <div class="play-btn">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script>
+    function playVideo() {
+        const video = document.getElementById('projectVideo');
+        const overlay = document.querySelector('.video-overlay');
+        
+        if (video.paused) {
+            video.play();
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+    }
+    
+    // Optional: Show overlay again when video ends or is paused
+    document.getElementById('projectVideo').addEventListener('pause', function() {
+        const overlay = document.querySelector('.video-overlay');
+        if (this.paused && !this.ended) {
+            overlay.style.display = 'flex';
+            overlay.style.opacity = '1';
+        }
+    });
+    
+    document.getElementById('projectVideo').addEventListener('ended', function() {
+        const overlay = document.querySelector('.video-overlay');
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '1';
+    });
+</script>
                     <!-- Key Features -->
                     <div class="project-features">
                         <h3 style="color: #ffffff; margin-bottom: 30px; font-size: 24px;">Key Features</h3>
