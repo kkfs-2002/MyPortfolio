@@ -1550,283 +1550,49 @@
 .projects-scroll {
   -webkit-overflow-scrolling: touch;
 }
- /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 85%;
-                max-width: 300px;
-                height: 100vh;
-                background: rgba(48, 42, 111, 0.98);
-                flex-direction: column;
-                padding: 80px 20px 20px;
-                transition: 0.3s ease;
-                z-index: 1000;
-                overflow-y: auto;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                margin: 8px 0;
-                width: 100%;
-            }
-
-            .nav-links a {
-                padding: 12px 15px;
-                font-size: 16px;
-                width: 100%;
-                border-radius: 5px;
-                justify-content: space-between;
-            }
-
-            .nav-links a:hover {
-                background: rgba(52, 152, 219, 0.1);
-            }
-
-            /* Dropdown menu in mobile */
-            .dropdown-menu {
-                position: static;
-                background: transparent;
-                box-shadow: none;
-                padding: 0;
-                margin-top: 5px;
-                display: none;
-                width: 100%;
-            }
-
-            .dropdown.active .dropdown-menu {
-                display: block;
-            }
-
-            .dropdown-menu li a {
-                padding: 10px 30px;
-                font-size: 14px;
-                background: rgba(0, 0, 0, 0.2);
-                margin: 2px 0;
-                border-radius: 5px;
-            }
-
-            .page-header {
-                min-height: 180px;
-                margin-top: 70px;
-                padding: 40px 15px;
-            }
-
-            .page-header h1 {
-                font-size: 28px;
-            }
-
-            .page-header p {
-                font-size: 15px;
-            }
-
-            .section-title {
-                font-size: 24px;
-                margin-bottom: 30px;
-            }
-
-            .about-text h3 {
-                font-size: 22px;
-            }
-
-            .about-info-circles {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .info-circle {
-                aspect-ratio: 1;
-                padding: 10px;
-            }
-
-            .info-circle h4 {
-                font-size: 15px;
-            }
-
-            .info-circle p {
-                font-size: 12px;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .about-content {
-                flex-direction: row;
-                align-items: center;
-                gap: 50px;
-            }
-
-            .about-text {
-                flex: 1;
-            }
-
-            .about-image {
-                flex: 1;
-                text-align: center;
-            }
-
-            .about-info-circles {
-                grid-template-columns: repeat(5, 1fr);
-                gap: 25px;
-            }
-
-            .footer-content {
-                flex-direction: row;
-                gap: 40px;
-            }
-
-            .footer-column {
-                flex: 1;
-                min-width: 200px;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 992px) {
-            .nav-links li {
-                margin-left: 15px;
-            }
-
-            .nav-links a {
-                font-size: 14px;
-            }
-
-            .page-header h1 {
-                font-size: 36px;
-            }
-
-            .about-info-circles {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 993px) {
-            .nav-links li {
-                margin-left: 25px;
-            }
-
-            .page-header {
-                min-height: 300px;
-            }
-
-            .page-header h1 {
-                font-size: 42px;
-            }
-
-            .about-text h3 {
-                font-size: 28px;
-            }
-
-            .about-info-circles {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .page-header {
-                min-height: 150px;
-                padding: 30px 15px;
-            }
-
-            .page-header h1 {
-                font-size: 24px;
-            }
-
-            .page-header p {
-                font-size: 14px;
-            }
-
-            .section-title {
-                font-size: 22px;
-            }
-
-            .about-text h3 {
-                font-size: 20px;
-            }
-
-            .about-text p {
-                font-size: 15px;
-            }
-
-            .about-info-circles {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .info-circle {
-                padding: 8px;
-            }
-
-            .info-circle h4 {
-                font-size: 14px;
-            }
-
-            .info-circle p {
-                font-size: 11px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 15px;
-            }
-
-            .footer-links.two-column {
-                grid-template-columns: 1fr;
-            }
-        }
-
     </style>
 </head>
 <body>
-  <!-- Header -->
-    <header id="main-header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">Portfolio<span>.</span></a>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                     <li class="dropdown">
-                        <a href="project.html">Projects <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="project.html">Project</a></li>
-                            <li><a href="project1.html">Project 01</a></li>
-                            <li><a href="project2.html">Project 02</a></li>
-                            <li><a href="project3.html">Project 03</a></li>
-                            <li><a href="project4.html">Project 04</a></li>
-                             <li><a href="project5.html">Project 05</a></li>
-                             <li><a href="project6.html">Project 06</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="work-experience.html">Experience</a></li>
-                    <li><a href="education.html">Education</a></li>
-                   <li class="dropdown" id="certificationsDropdown">
-                        <a href="#">Certifications <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="Certifications.html">Certifications</a></li>
-                            <li><a href="certification1.html">Certification 1</a></li>
-                            <li><a href="certification2.html">Certification 2</a></li>
-                            <li><a href="certification3.html">Certification 3</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+          <a href="#" class="logo" style="color: #61A4BC; font-weight: bold; text-decoration: none;">Portfolio</a>
+            <ul class="nav-links">
+               <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+    <a href="#">Projects</a>
+    <ul class="dropdown-menu">
+         <li><a href="project.html">Project</a></li>
+        <li><a href="project1.html">Project 01</a></li>
+        <li><a href="project2.html">Project 02</a></li>
+        <li><a href="project3.html">Project 03</a></li>
+        <li><a href="project4.html">Project 04</a></li>
+         <li><a href="project5.html">Project 05</a></li>
+         <li><a href="project6.html">Project 06</a></li>
+    </ul>
+</li>
+                <li><a href="work-experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li class="dropdown">
+    <a href="#">Certifications <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+          <li><a href="Certifications.html">Certifications</a></li>
+        <li><a href="certification1.html">Certification 1</a></li>
+        <li><a href="certification2.html">Certification 2</a></li>
+        <li><a href="certification3.html">Certification 3</a></li>
+    </ul>
+</li>
+
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <div class="overlay" id="overlay"></div>
-    </header>
+    </nav>
+
     <!-- Hero Section -->
 <section id="home" class="hero">
     <div class="overlay"></div> <!-- Light blue overlay -->
